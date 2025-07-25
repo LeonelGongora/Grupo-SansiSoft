@@ -1,0 +1,29 @@
+ID TESTCASE: RFV0001
+TÍTULO: Obtener noticias con palabra clave “debate” de la página 2
+
+Descripción:
+El usuario debe obtener una lista de noticias de The Guardian que contengan la palabra clave “debate”, utilizando el parámetro page=2, con un límite de 10 resultados por página.
+
+Precondiciones:
+
+    Tener acceso a la URL del API con clave pública de prueba
+    El endpoint debe estar activo
+    La palabra clave “debate” debe existir en el contenido del diario
+
+Ambiente:
+
+    URL: https://content.guardianapis.com
+
+Pasos:
+1. Abrir Postman
+2. Seleccionar método GET
+3. Copiar la URL: https://content.guardianapis.com/search?page=2&q=debate&api-key=test
+4. Click en el botón “Send”
+5. Comprobar la salida:
+
+Resultado Esperado:
+
+Código de respuesta: 200 OK, response.status debe ser ok y el campo response.results debe contener 10 elementos
+
+Prioridad: 2 media
+Categoria: funcional 
