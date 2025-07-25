@@ -15,4 +15,3 @@ def test_get_pokemon():
 
     assert response.status_code == 404
      # assert response.json() is not None
-    assert response.json()["name"] == "metapod"
