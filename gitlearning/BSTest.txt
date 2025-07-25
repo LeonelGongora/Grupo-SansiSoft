@@ -1,0 +1,31 @@
+# ID del Test: BS-01  
+# Título: Obtener los datos del Pokémon con nombre "Metapod"
+
+# Descripción  
+Verificar que el usuario pueda obtener toda la información correspondiente al Pokémon llamado "Metapod" desde la API.
+
+# Precondiciones  
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente.  
+- El nombre "Metapod" debe existir en el contexto de la API.
+
+# Ambiente  
+- URL: `https://pokeapi.co/api/v2/pokemon/metapod`
+
+# Pasos  
+1. Abrir Postman.  
+2. Seleccionar el método **GET**.  
+3. Ingresar la URL: `https://pokeapi.co/api/v2/pokemon/metapod`  
+4. Presionar el botón **Send** para enviar la solicitud.  
+5. Verificar la respuesta recibida.
+
+# Resultado esperado  
+- Código de respuesta HTTP: **200 OK**  
+- El estado de la respuesta (`response.status`) debe indicar éxito.  
+- La respuesta debe contener los datos completos del Pokémon "Metapod".
+
+# Prioridad  
+Media (2)
+
+# Categoría  
+Funcional
