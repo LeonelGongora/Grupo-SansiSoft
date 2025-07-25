@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pytest cache
+.pytest_cache/
+
+# Entornos virtuales
+venv/
+ENV/
+env/
+
+# Ignorar todos __pycache__ en cualquier carpeta
+**/__pycache__/
+
+# Ignorar todas las carpetas .pytest_cache
+**/.pytest_cache/
