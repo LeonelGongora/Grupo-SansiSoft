@@ -1,0 +1,14 @@
+# Ignorar entorno virtual de Python
+venv/
+../venv/
+# Archivos de configuración local
+*.local
+config_local.py
+
+# Archivos de VS Code (si usas)
+.vscode/
+
+# Otros ejemplos comunes
+*.pyc
+__pycache__/
+.env
