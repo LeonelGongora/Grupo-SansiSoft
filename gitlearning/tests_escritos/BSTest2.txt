@@ -1,0 +1,32 @@
+# ID del Test: BS-03  
+# Título: Verificar manejo de error 404 al consultar un Pokémon inexistente
+
+# Descripción  
+Validar que la API responda correctamente con un código de estado HTTP 404 cuando se intente acceder a un Pokémon que no existe en la base de datos.
+
+# Precondiciones  
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente.  
+- El nombre del Pokémon utilizado en la prueba ("metapod123") no debe existir en la API.
+
+# Ambiente  
+- URL: `https://pokeapi.co/api/v2/pokemon/metapod123`
+
+# Pasos  
+1. Abrir Postman.  
+2. Seleccionar el método **GET**.  
+3. Ingresar la URL: `https://pokeapi.co/api/v2/pokemon/metapod123`  
+4. Presionar el botón **Send** para enviar la solicitud.  
+5. Verificar la respuesta recibida.
+
+# Resultado esperado  
+- Código de respuesta HTTP: **404 Not Found**  
+- La respuesta debe indicar que el recurso no fue encontrado.  
+- El campo `response.status` debe reflejar el estado 404.  
+- No debe devolverse un cuerpo de respuesta con datos válidos de un Pokémon.
+
+# Prioridad  
+Alta (1)
+
+# Categoría  
+Manejo de errores / Funcional
