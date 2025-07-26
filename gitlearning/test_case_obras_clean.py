@@ -1,4 +1,5 @@
 import requests
+import pytest
 
 def test_artic_api_response_ok():
     url = "https://api.artic.edu/api/v1/artworks"
