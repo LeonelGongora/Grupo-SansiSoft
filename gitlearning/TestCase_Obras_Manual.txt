@@ -1,0 +1,19 @@
+#ID JES001-10
+#Titulo
+#Obtener la lista de obras de arte publicadas 
+#Descripción
+#El usuario debe obtener una lista de obras de arte publicadas en colección publica digital.
+#Ambiente
+#Tener acceso a https://api.artic.edu/docs/#quick-start
+#Pasos
+#1.	Ingresar a la pagina
+#2.	Abrir el Postman
+#3.	Copiar la URL https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number
+#4.	Seleccionar el metodo GET
+#5.	Click en el boton send
+#6.	Observar la respuesta recibida.
+#Resultado Esperado
+#Cuerpo de la respuesta body debe contener:
+#Prioridad
+#Medio
+#categoria Smoke
