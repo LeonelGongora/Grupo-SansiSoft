@@ -40,3 +40,4 @@ poetry.lock
 
 
 .vscode/
+Grupo-SansiSoft/src/configuration/config.py
