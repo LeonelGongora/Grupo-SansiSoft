@@ -98,7 +98,7 @@ def test_BS_create_computer():
     url = "https://api.restful-api.dev/objects"
 
     payload = {
-        "name": "Computer Tarea Brandon",
+        "name": "Creating Computer Tarea Brandon",
         "data": {
             "year": 2020,
             "price": 1000,
