@@ -1,4 +1,5 @@
 import requests
+import pytest
 
 def test_ID_JES001_10_Obtener_la_lista_de_obras_de_arte_publicadas():
     """El usuario debe obtener una lista de obras de arte publicadas en colección publica digital"""
