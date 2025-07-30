@@ -6,6 +6,7 @@ from src.assertions.post_assertions import assert_post_response_schema, assert_p
 @pytest.mark.functional
 
 def test_CP001_create_post(get_url, get_token):
+    """Descripción: Crea un post exitoso validando status 200 y estructura del payload y respuesta."""
     url = get_url
     headers = get_token
     payload = {
