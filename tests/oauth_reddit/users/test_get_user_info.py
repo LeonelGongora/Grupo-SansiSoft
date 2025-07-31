@@ -27,3 +27,19 @@ def test_OI_001_obtener_info_usuario_existente(get_token_fixture):
 
     assert response.status_code == 200
 
+@pytest.mark.functional
+def test_OI_002_obtener_info_usuario_sin_autentificacion():
+    
+    """Descripción: Se intenta informacion de un usuario, eliminando el header Authorization en los headers que se envia"""
+
+    username_objetivo = os.getenv("REDDIT_USERNAME_VALIDO") # Usuario inexistente
+
+    headers = {
+        "User-Agent": os.getenv("REDDIT_USER_AGENT")  # Se borra header Authorization
+    }
+
+    url = f"https://oauth.reddit.com/user/{username_objetivo}/about"
+    response = requests.get(url, headers=headers)
+
+    assert response.status_code == 200
+
