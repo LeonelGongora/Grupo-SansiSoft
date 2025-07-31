@@ -60,3 +60,5 @@ reddit_auth = RedditAuthConfig(refresh_buffer=300)  # ⏱ margen de 5 minutos
 
 BASE_URL = reddit_auth.BASE_URL
 ACCESS_TOKEN = reddit_auth.ACCESS_TOKEN
+
+# print(ACCESS_TOKEN)

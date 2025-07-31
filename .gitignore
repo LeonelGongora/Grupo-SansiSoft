@@ -40,3 +40,7 @@ poetry.lock
 
 
 .vscode/
+
+
+
+configuration/config.py
