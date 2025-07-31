@@ -12,3 +12,9 @@ def assert_comentario_creado(response):
     assert json_resp["body"].strip() != "", "El cuerpo del comentario está vacío"
     
     print("✅ Comentario creado correctamente.")
+
+
+def assert_comentario_post_invalido(respuesta):
+   
+    assert respuesta.status_code in [403, 404], f"Se esperaba código 403 o 404, pero fue {respuesta.status_code}" 
+  
