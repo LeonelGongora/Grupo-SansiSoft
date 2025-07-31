@@ -43,3 +43,20 @@ def test_OI_002_obtener_info_usuario_sin_autentificacion():
 
     assert response.status_code == 200
 
+@pytest.mark.functional
+def test_OI_003_obtener_info_usuario_inexistente(get_token_fixture):
+
+    """Descripción: Se intenta informacion de un usuario, utilizando un nombre de usuario que no pertenece a ningun usuario registrado de Reddit"""
+
+    username_objetivo = os.getenv("REDDIT_USERNAME_INEXISTENTE") # Usuario inexistente
+    access_token = get_token_fixture  
+
+    headers = {
+        "Authorization": f"bearer {access_token}",
+        "User-Agent": os.getenv("REDDIT_USER_AGENT")
+    }
+
+    url = f"https://oauth.reddit.com/user/{username_objetivo}/about"
+    response = requests.get(url, headers=headers)
+
+    assert response.status_code == 200
