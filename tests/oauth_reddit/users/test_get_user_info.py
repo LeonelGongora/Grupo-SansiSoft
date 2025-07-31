@@ -79,3 +79,21 @@ def test_OI_004_obtener_info_usuario_con_caracteres_especiales(get_token_fixture
     response = requests.get(url, headers=headers)
 
     assert response.status_code == 200
+
+@pytest.mark.functional
+def test_OI_005_obtener_info_con_token_caducado():
+
+    """Descripción: Se intenta informacion de un usuario, utilizando un token caducado en el header Authorization"""
+
+    username_objetivo = os.getenv("REDDIT_USERNAME_VALIDO")
+    access_token = os.getenv("REDDIT_TOKEN_CADUCADO")
+
+    headers = {
+        "Authorization": f"bearer {access_token}",
+        "User-Agent": os.getenv("REDDIT_USER_AGENT")
+    }
+
+    url = f"https://oauth.reddit.com/user/{username_objetivo}/about"
+    response = requests.get(url, headers=headers)
+
+    assert response.status_code == 200
