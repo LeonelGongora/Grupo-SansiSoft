@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "api_type": {
+      "type": "string"
+    },
+    "sr": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "sendreplies": {
+      "type": "string"
+    },
+    "spoiler": {
+      "type": "string"
+    },
+    "nsfw": {
+      "type": "string"
+    },
+    "resubmit": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "api_type",
+    "sr",
+    "title",
+    "kind",
+    "text",
+    "sendreplies",
+    "spoiler",
+    "nsfw",
+    "resubmit"
+  ]
+}

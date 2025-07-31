@@ -1,46 +1,4 @@
-# Entornos virtuales
-venv/
-.venv/
-
-# Archivos de configuración y variables de entorno
+config.py
 .env
-.env.*
-
-# Archivos de caché de Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Archivos de caché de pytest
-tests/__pycache__
-tests/.pytest_cache
-
-# Archivos generados por test o debug
-*.log
-*.tmp
-
-# Configuración de IDEs
-.vscode/
-.idea/
-*.swp
-
-# Archivos de paquetes
-*.egg-info/
-dist/
-build/
-
-# Archivos temporales de sistema
-.DS_Store
-Thumbs.db
-
-# Archivos de lock (opcional)
-Pipfile.lock
-poetry.lock
-
-
-.vscode/
-
-
-
-configuration/config.py
+report.html
+style.css
