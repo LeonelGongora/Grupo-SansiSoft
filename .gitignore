@@ -2,3 +2,5 @@ config.py
 .env
 report.html
 style.css
+__pycache__/
+*.py[cod]
