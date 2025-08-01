@@ -5,9 +5,9 @@ from src.assertions.post_assertions import assert_post_response_schema, assert_p
 @pytest.mark.smoke
 @pytest.mark.functional
 
-def test_CP001_create_post(get_url, get_token_fixture):
+def test_CP001_create_post(get_token_fixture):
     """Descripción: Crea un post exitoso validando status 200 y estructura del payload y respuesta."""
-    url = get_url
+    url = "https://oauth.reddit.com"
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': 'SansiSofRFV/0.1 by IceOld4091',
