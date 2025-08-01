@@ -12,12 +12,12 @@ def get_schema(relative_path):
 def assert_add_friend_success_payload_schema(payload):
     schema = get_schema("../resources/payloads/amigo_payload_success_schema.json")
     jsonschema.validate(instance=payload, schema=schema)
-    print("\n✅ Payload is valid (Success)")
+    print("\n  Datos de solicitud correctos")
 
 def assert_add_friend_success_response_schema(response_json):
     schema = get_schema("../resources/schemas/amigo_response_success_schema.json")
     jsonschema.validate(instance=response_json, schema=schema)
-    print("\n✅ Schema is valid (Success)")
+    print("\n✅ Respuesta esperada")
 def assert_add_friend_successfully(response):
     assert response.status_code == 200, f"Expected 200 but got {response.status_code}"
-    print("\n✅ Request returned status code 200 (Success)")
+    print("\n✅ Retorna esperado codigo 200")
