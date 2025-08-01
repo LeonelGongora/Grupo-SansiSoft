@@ -9,7 +9,7 @@ THING_ID_INVALIDO = "t3_id_invalido_000"
 @pytest.mark.functional
 @pytest.mark.regression
 @pytest.mark.smoke
-def test_agregar_comentario_post_id_invalido():
+def test_RC013_agregar_comentario_post_id_invalido():
     datos_entrada = {
         "thing_id": THING_ID_INVALIDO,
         "text": "Comentario con id de post inválido",
