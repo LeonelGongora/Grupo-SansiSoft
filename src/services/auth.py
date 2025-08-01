@@ -22,7 +22,8 @@ def get_token():
     data = {
         'grant_type': 'password',
         'username': username,
-        'password': password
+        'password': password,
+        
     }
 
     headers = {
@@ -33,8 +34,15 @@ def get_token():
                         auth=auth, data=data, headers=headers)
 
     if res.status_code != 200:
-        raise Exception(f"Error autenticando: {res.text}")
-
+    
+        raise Exception(f"Error autenticando: {res.text}")   
+    
     return res.json()['access_token']
 
-
+def get_headers():
+    token = get_token()
+    return {
+        'Authorization': f'bearer {token}',
+        'User-Agent': os.getenv("REDDIT_USER_AGENT"),
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }

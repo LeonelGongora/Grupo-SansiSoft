@@ -2,13 +2,9 @@ import pytest
 import requests
 from dotenv import load_dotenv
 load_dotenv()
-import config as conf
-from auth import get_token
-
-@pytest.fixture(scope="session")
-def get_url():
-    return conf.BASE_URL
+from src.services.auth import get_token
 
 @pytest.fixture(scope="session")
 def get_token_fixture():
     return get_token()
+

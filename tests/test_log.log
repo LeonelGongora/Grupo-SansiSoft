@@ -1,0 +1,70 @@
+2025-08-01 00:17:58,152 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 00:24:49,083 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 00:26:16,429 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 00:27:01,858 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:02:16,398 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:03:53,794 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:07:23,392 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:14:07,118 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:16:45,776 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:19:25,465 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:20:45,261 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:21:49,835 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 01:22:54,686 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:15:47,529 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:19:11,189 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:31:03,407 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:31:28,372 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:50:35,655 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:58:02,538 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 11:59:15,358 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 12:00:01,401 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 12:06:21,427 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 12:12:53,897 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 12:19:55,541 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 12:20:11,996 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 12:58:19,438 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 12:58:19,439 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 12:59:47,990 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 12:59:47,991 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 13:04:42,935 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 13:04:42,936 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 13:08:58,832 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 13:08:58,832 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:21:34,170 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 14:21:34,171 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:22:00,940 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 14:22:00,941 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:29:34,056 - INFO - Se va a intentar crear el comentario vacío con el id: t3_1mazjyd
+2025-08-01 14:29:34,057 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:42:39,249 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 14:42:39,250 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:42:40,781 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 14:42:40,781 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:45:44,860 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 14:45:44,860 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:45:45,952 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 14:45:45,953 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:48:17,971 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 14:48:19,205 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 14:48:19,206 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:48:20,259 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 14:48:20,259 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:50:47,549 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 14:50:48,650 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 14:50:48,650 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:50:49,685 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 14:50:49,685 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:56:02,404 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 14:56:03,484 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 14:56:03,485 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:56:04,545 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 14:56:04,546 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:57:14,858 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 14:57:14,859 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:57:16,257 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 14:57:16,265 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 14:57:17,287 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 14:57:17,287 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 14:57:18,321 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 14:57:18,321 - INFO - Validando los datos de entrada contra el esquema de entrada
