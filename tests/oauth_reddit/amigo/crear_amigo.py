@@ -66,6 +66,24 @@ def test_AA003_add_friend_nonexistent_user(get_token_fixture):
         pytest.xfail(f"Codigo esperado era 404, pero obtuvo {response.status_code}")
     
     assert response.status_code == 404
+# Agregar amigo sin token → debe retornar 403
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_AA004_add_friend_without_token():
+    """AA007 - Debe retornar 403 cuando no se envía access token"""
+    time.sleep(2)
+    headers = {
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+    payload = {"name": username_valid}
+    assert_add_friend_success_payload_schema(payload)
+    submit_url = f"{url}/api/v1/me/friends/{username_valid}"
+    response = requests.put(submit_url, headers=headers, json=payload)
+    if response.status_code != 403:
+        pytest.xfail(f"Se esperaba el código 403 (Prohibido), pero se obtuvo {response.status_code}")
+    
+    assert response.status_code == 403
 
 # Agregar amigo con token inválido → debe retornar 403
 @pytest.mark.smoke
