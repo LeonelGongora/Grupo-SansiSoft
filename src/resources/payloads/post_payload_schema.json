@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string"
+    },
+    "sr_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "sr_name"
+  ]
+}
