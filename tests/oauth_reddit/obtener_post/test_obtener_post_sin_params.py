@@ -7,7 +7,7 @@ from src.assertions.get_post_assertions import (
 
 @pytest.mark.functional
 @pytest.mark.regression
-def test_OI006_get_post_without_query_params(get_token_fixture):
+def test_OI006_get_post_without_query_params(get_token_fixture, get_user_agent):
     """
     OI-006: Obtener información de un post sin incluir query params.
     Valida que el status sea 200 y que children esté vacío.
@@ -15,7 +15,7 @@ def test_OI006_get_post_without_query_params(get_token_fixture):
     url = "https://oauth.reddit.com/api/info"  # Sin parámetros
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
-        'User-Agent': 'SansiSofRFV/0.1 by IceOld4091'
+        'User-Agent': get_user_agent
     }
 
     response = requests.get(url, headers=headers)

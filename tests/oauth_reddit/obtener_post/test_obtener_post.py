@@ -5,14 +5,14 @@ from src.assertions.get_post_assertions import assert_get_post_response_schema, 
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.regression
-def test_CP002_get_post_by_id(get_token_fixture, created_post_id):
+def test_CP002_get_post_by_id(get_token_fixture, created_post_id, get_user_agent):
     """Descripción: Consulta un post por ID validando status 200 y la estructura de la respuesta."""
 
     post_id = created_post_id
     url = f"https://oauth.reddit.com/api/info?id={post_id}"
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
-        'User-Agent': 'SansiSofRFV/0.1 by IceOld4091'
+        'User-Agent': get_user_agent
     }
 
     response = requests.get(url, headers=headers)

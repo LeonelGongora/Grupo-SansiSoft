@@ -7,7 +7,7 @@ from src.assertions.get_post_assertions import (
 
 @pytest.mark.functional
 @pytest.mark.regression
-def test_OI002_get_post_id_nonexistent(get_token_fixture, ):
+def test_OI002_get_post_id_nonexistent(get_token_fixture, get_user_agent):
     """
     OI-002: Obtener información de un post con ID inexistente.
     Valida que el status sea 200 y que children esté vacío.
@@ -16,7 +16,7 @@ def test_OI002_get_post_id_nonexistent(get_token_fixture, ):
     url = f"https://oauth.reddit.com/api/info?id={post_id}"
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
-        'User-Agent': 'SansiSofRFV/0.1 by IceOld4091'
+        'User-Agent': get_user_agent
     }
 
     response = requests.get(url, headers=headers)

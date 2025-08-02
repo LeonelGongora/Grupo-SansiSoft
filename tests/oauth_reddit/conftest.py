@@ -1,5 +1,5 @@
 import pytest
-import requests
+import os
 from dotenv import load_dotenv
 load_dotenv()
 from src.services.auth import get_token
@@ -16,3 +16,7 @@ def created_post_id():
     title="Mi publicacion para mis test de prueba",
     text="Este texto lo escribo para todos los tests de prueba"
     )
+
+@pytest.fixture(scope="session")
+def get_user_agent():
+    return os.getenv("REDDIT_USER_AGENT")
