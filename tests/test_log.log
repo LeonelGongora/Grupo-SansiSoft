@@ -68,3 +68,529 @@
 2025-08-01 14:57:17,287 - INFO - Validando los datos de entrada contra el esquema de entrada
 2025-08-01 14:57:18,321 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
 2025-08-01 14:57:18,321 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:28:28,430 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 19:28:28,431 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:28:29,804 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 19:28:29,813 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 19:28:30,831 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 19:28:30,831 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 19:28:31,786 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 19:28:31,786 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:28:32,906 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 19:28:32,906 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:31:49,576 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 19:31:49,576 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:31:50,887 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 19:31:50,895 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 19:31:51,931 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 19:31:51,932 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 19:31:52,331 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 19:31:52,332 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:31:53,384 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 19:31:53,384 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:44:36,310 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 19:44:36,310 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:44:37,609 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 19:44:37,658 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 19:44:38,716 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 19:44:38,718 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 19:44:38,946 - INFO - Validando que se recibio una respuesta con un error.
+2025-08-01 19:44:38,957 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 19:44:38,958 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 19:44:40,028 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 19:44:40,028 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 21:28:56,280 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 21:28:56,281 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 21:58:58,849 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 21:58:58,849 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:11:27,242 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:11:27,243 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:12:01,130 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:12:01,130 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:19:09,324 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:19:09,324 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:20:28,312 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:20:28,313 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:22:23,902 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:22:23,902 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:27:09,531 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:27:09,531 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:30:29,743 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:30:29,744 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:32:25,567 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:32:25,568 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:37:27,906 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:37:27,906 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:37:29,285 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:37:50,515 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:37:50,516 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:37:52,193 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:37:52,284 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:40:31,363 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:40:31,364 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:40:32,947 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:40:33,020 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:42:43,944 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:42:43,944 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:42:45,288 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:42:45,366 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:43:37,161 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:43:37,161 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:43:38,897 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:43:38,940 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:45:34,228 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:45:34,228 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:45:35,628 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:45:35,721 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:46:41,235 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:46:41,236 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:46:42,501 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:46:42,573 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:46:57,913 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:46:57,914 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:46:59,139 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:46:59,205 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:52:19,942 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:52:19,942 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:52:21,296 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:52:21,392 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:52:21,605 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 22:52:22,912 - INFO - Validando que el código HTTP sea 200
+2025-08-01 22:52:22,913 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 22:56:09,345 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:56:09,346 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:56:10,680 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:56:10,792 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:56:10,793 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-01 22:56:48,228 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 22:56:48,228 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 22:56:49,538 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 22:56:49,613 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 22:56:49,614 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-01 22:56:49,619 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 22:56:50,646 - INFO - Validando que el código HTTP sea 200
+2025-08-01 22:56:50,646 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:22:17,292 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:22:17,293 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:22:18,604 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:22:18,686 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 23:22:18,686 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-01 23:22:18,704 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:22:19,741 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:22:20,812 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:22:20,813 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:22:20,817 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:22:20,818 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:22:21,043 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:22:21,049 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:22:21,050 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:22:22,133 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:22:22,136 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:22:22,137 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:22:23,189 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:35:48,345 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:35:48,346 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:35:48,674 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:35:48,935 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:35:49,158 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:35:49,398 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:35:49,398 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:35:49,445 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:35:49,445 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:35:49,493 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:35:49,494 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:35:49,753 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:35:49,765 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:35:49,765 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:35:50,057 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:36:38,842 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:36:38,843 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:36:40,244 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:36:40,310 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 23:36:40,310 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-01 23:36:40,318 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:36:41,366 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:36:42,605 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:36:42,606 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:36:42,615 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:36:42,616 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:36:42,778 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:36:42,779 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:36:43,840 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:36:43,844 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:36:43,845 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:36:44,870 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:37:23,348 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:37:23,348 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:37:24,713 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:37:24,791 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 23:37:24,792 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-01 23:37:24,799 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:37:25,834 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:37:26,880 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:37:26,881 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:37:26,891 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:37:26,892 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:37:27,266 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:37:27,276 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:37:27,277 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:37:28,330 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:37:28,337 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:37:28,338 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:37:29,553 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:39:24,072 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:39:24,072 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:39:25,792 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:39:25,988 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:39:27,225 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:39:28,936 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:39:28,937 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:39:28,941 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:39:28,942 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:39:29,167 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:39:29,171 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:39:29,171 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:39:30,611 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:39:30,614 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:39:30,615 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:39:32,183 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:39:51,618 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:39:51,619 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:39:53,087 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:39:53,364 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:39:55,229 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:39:56,757 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:39:56,757 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:39:56,768 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:39:56,768 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:39:57,613 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:39:57,619 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:39:57,620 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:39:59,551 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:39:59,569 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:39:59,569 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:40:00,700 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:42:27,643 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:42:27,643 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:42:28,828 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:42:29,046 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:42:30,110 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:42:31,305 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:42:31,306 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:42:31,314 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:42:31,315 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:42:31,658 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:42:31,669 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:42:31,670 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:42:32,758 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:42:32,765 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:42:32,766 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:42:33,840 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:44:29,897 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:44:29,897 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:44:31,012 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:44:31,239 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:44:32,382 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:44:33,457 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:44:33,458 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:44:33,461 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:44:33,462 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:44:33,695 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:44:33,700 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:44:33,700 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:44:34,803 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:44:34,809 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:44:34,810 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:44:35,837 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:46:08,131 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:46:08,132 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:46:09,306 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:46:09,538 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:46:10,543 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:46:11,614 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:46:11,614 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:46:11,623 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:46:11,624 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:46:11,864 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:46:11,868 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:46:11,868 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:46:12,913 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:46:12,916 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:46:12,916 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:46:13,935 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:53:20,201 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:53:20,202 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:53:21,599 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:53:21,641 - INFO - validando la respuesta contra el esquema de salida
+2025-08-01 23:53:21,642 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-01 23:53:21,651 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:53:23,180 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:53:25,375 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:53:25,375 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:53:25,382 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:53:25,383 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:53:25,648 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:53:25,655 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:53:25,655 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:53:26,854 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:53:26,865 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:53:26,866 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:53:27,980 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:57:15,522 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-01 23:57:15,523 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:57:16,083 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-01 23:57:16,433 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-01 23:57:16,725 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-01 23:57:17,003 - INFO - Validando que el código HTTP sea 200
+2025-08-01 23:57:17,004 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-01 23:57:17,009 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-01 23:57:17,009 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-01 23:57:17,319 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-01 23:57:17,326 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-01 23:57:17,326 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:57:17,588 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-01 23:57:17,592 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-01 23:57:17,592 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-01 23:57:17,858 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:01:25,400 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:01:25,401 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:01:25,701 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:01:25,986 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:01:26,227 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:01:26,481 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:01:26,481 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:01:26,485 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:01:26,485 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:01:26,702 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:01:26,712 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:01:26,713 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:01:26,956 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:01:26,959 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:01:26,960 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:01:27,176 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:03:09,089 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:03:09,090 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:03:09,442 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:03:09,674 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:03:10,100 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:03:10,322 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:03:10,322 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:03:10,327 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:03:10,327 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:03:10,550 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:03:10,592 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:03:10,593 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:03:10,824 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:03:10,832 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:03:10,833 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:03:11,059 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:04:00,168 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:04:00,169 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:04:00,483 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:04:00,750 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:04:01,016 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:04:01,283 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:04:01,284 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:04:01,296 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:04:01,296 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:04:01,619 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:04:01,726 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:04:01,727 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:04:01,996 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:04:02,004 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:04:02,005 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:04:02,241 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:06:04,364 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:06:04,365 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:06:04,737 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:06:04,966 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:06:05,234 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:06:05,497 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:06:05,497 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:06:05,533 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:06:05,533 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:06:05,797 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:06:05,802 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:06:05,802 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:06:06,032 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:06:06,058 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:06:06,058 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:06:06,298 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:06:34,842 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:06:34,842 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:06:36,306 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:06:36,366 - INFO - validando la respuesta contra el esquema de salida
+2025-08-02 00:06:36,366 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-02 00:06:36,374 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:06:37,504 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:06:38,767 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:06:38,767 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:06:38,770 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:06:38,771 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:06:39,058 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:06:39,069 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:06:39,070 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:06:40,252 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:06:40,256 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:06:40,257 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:06:41,379 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:14:59,537 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:14:59,538 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:15:00,928 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:15:01,274 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:15:02,614 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:15:03,898 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:15:03,899 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:15:03,908 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:15:03,908 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:15:04,135 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:15:04,144 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:15:04,144 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:15:05,253 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:15:05,261 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:15:05,262 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:15:06,585 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:18:12,796 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:18:12,797 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:18:14,240 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:18:14,317 - INFO - validando la respuesta contra el esquema de salida
+2025-08-02 00:18:14,317 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-02 00:18:14,326 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:18:15,377 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:18:16,561 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:18:16,562 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:18:16,571 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:18:16,572 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:18:16,847 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:18:16,853 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:18:16,853 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:18:17,887 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:18:17,894 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:18:17,895 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:18:18,922 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:19:04,944 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:19:04,944 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:19:06,188 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:19:06,430 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:19:07,474 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:19:08,637 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:19:08,638 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:19:08,648 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:19:08,648 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:19:09,850 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:19:09,860 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:19:09,860 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:19:10,994 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:19:11,000 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:19:11,001 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:19:12,188 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:20:49,516 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:20:49,516 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:20:50,623 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:20:51,145 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:20:52,253 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:20:53,305 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:20:53,305 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:20:53,311 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:20:53,311 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:20:54,362 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:20:54,373 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:20:54,373 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:20:55,452 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:20:55,460 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:20:55,460 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:20:56,550 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:25:12,493 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:25:12,494 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:25:13,683 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:25:14,185 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:25:15,205 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:25:16,269 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:25:16,269 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:25:16,278 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:25:16,278 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:25:17,335 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:25:17,340 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:25:17,341 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:25:18,399 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:25:18,400 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:25:19,482 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:25:19,493 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:25:19,494 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:25:20,647 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:28:15,296 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:28:15,296 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:28:16,651 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:28:16,756 - INFO - validando la respuesta contra el esquema de salida
+2025-08-02 00:28:16,756 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-02 00:28:16,816 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:28:17,838 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:28:18,994 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:28:18,995 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:28:19,004 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:28:19,005 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:28:20,074 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:28:20,085 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 00:28:20,086 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:28:21,318 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:28:21,318 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:28:22,389 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:28:22,395 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:28:22,396 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:28:23,527 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:28:45,009 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:28:45,009 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:28:46,033 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:28:46,281 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:28:47,363 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:28:48,797 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:28:48,798 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:28:48,809 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:28:48,810 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:28:50,673 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:28:50,676 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 00:28:50,677 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:28:51,747 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:28:51,748 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:28:52,765 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:28:52,769 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:28:52,769 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:28:53,815 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:31:41,590 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:31:41,590 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:31:43,982 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:31:44,432 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:31:45,677 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:31:46,838 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:31:46,839 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:31:46,843 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:31:46,843 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:31:48,058 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:31:48,061 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 00:31:48,062 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:31:49,386 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:31:49,387 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:31:50,515 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:31:50,518 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:31:50,519 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:31:51,689 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:38:26,214 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 00:38:26,214 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:38:27,835 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 00:38:27,927 - INFO - validando la respuesta contra el esquema de salida
+2025-08-02 00:38:27,927 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-02 00:38:27,935 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 00:38:29,180 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mazjyd
+2025-08-02 00:38:30,263 - INFO - Validando que el código HTTP sea 200
+2025-08-02 00:38:30,263 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 00:38:30,273 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 00:38:30,273 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:38:32,256 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 00:38:32,266 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 00:38:32,267 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 00:38:34,693 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mazjyd
+2025-08-02 00:38:34,693 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:38:36,009 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 00:38:36,016 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
+2025-08-02 00:38:36,017 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 00:38:37,673 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.

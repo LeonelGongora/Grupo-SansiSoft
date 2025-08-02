@@ -1,7 +1,7 @@
 from src.redditApi.reddit_api import comentar_en_post
 from src.assertions.comment_assertions import assert_comentario_creado
 from src.schemas.crear_comentario.crear_comentario_schema_input import input_schema
-from src.schemas.crear_comentario.crear_comentario_output import output_schema
+from src.schemas.crear_comentario.crear_comentario_output_exitoso import schema_data
 
 import jsonschema
 import pytest
@@ -23,20 +23,7 @@ def test_RC012_agregar_comentario_exitoso():
     logging.info("validando los datos de entrada contra el esquema de entrada")
     jsonschema.validate(instance=datos_entrada, schema=input_schema)
     respuesta = comentar_en_post(datos_entrada["thing_id"], datos_entrada["text"])
-    wrapped_response = {
-        "json": {
-            "errors": [],
-            "data": {
-                "things": [
-                    {
-                        "kind": "t1",
-                        "data": respuesta.json()
-                    }
-                ]
-            }
-        }
-    }
-
-    jsonschema.validate(instance=wrapped_response, schema=output_schema)
+    logging.info("validando que se haya creado el comentario exitosamente")
+    jsonschema.validate(instance=respuesta.json(), schema=schema_data)
     logging.info("validando la respuesta contra el esquema de salida")
-    assert_comentario_creado(wrapped_response,respuesta)
+    assert_comentario_creado(respuesta.json())

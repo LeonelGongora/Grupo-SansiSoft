@@ -25,5 +25,6 @@ def assert_post_response_schema(response_json):
 def assert_post_created_successfully(response):
     assert response.status_code == 200, f"Expected 200 but got {response.status_code}"
     assert "json" in response.json()
+    print(response.json()["json"]["errors"])
     assert response.json()["json"]["errors"] == []
 
