@@ -1,7 +1,7 @@
 import requests
 import pytest
 from src.assertions.post_assertions import assert_post_response_schema, assert_post_created_successfully, assert_payload_matches_schema
-
+from os import getenv
 @pytest.mark.smoke
 @pytest.mark.functional
 
@@ -10,12 +10,12 @@ def test_CP001_create_post(get_token_fixture):
     url = "https://oauth.reddit.com"
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
-        'User-Agent': 'SansiSofRFV/0.1 by IceOld4091',
+        'User-Agent': f'{getenv("REDDIT_USER_AGENT")}',
         'Content-Type': 'application/x-www-form-urlencoded'
     }
     payload = {
         'api_type': 'json',
-        'sr': 'u_IceOld4091',
+        'sr': f'{getenv("REDDIT_SUBREDDIT")}',
         'title': 'Publicacion de prueba con Python con OAuth',
         'kind': 'self',
         'text': 'Esta es la descripcion de una publicación de prueba.',
