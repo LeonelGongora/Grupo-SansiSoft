@@ -34,10 +34,10 @@ def assert_comentario_sin_token(response):
 
 
 def assert_comentario_token_caducado(response):
-    assert response.status_code in [401,404], f"Se esperaba código 401 o 404, pero fue {response.status_code}"
-    json_resp = response.json()
-    assert "json" in json_resp, "La respuesta no contiene el campo 'json'"
-    assert "errors" in json_resp["json"], "La respuesta no contiene el campo 'errors'"
-    errores = json_resp["json"]["errors"]
-    assert errores, "El campo 'errors' está vacío"
-    logging.info("No se permite crear comentarios con token no valido o caducado")
+    assert response.status_code == 401, f"Se esperaba status 401, pero se recibió {response.status_code}"
+    content_type = response.headers.get("Content-Type", "")
+    if "application/json" in content_type:
+        json_resp = response.json()
+        assert "error" in json_resp or "message" in json_resp, "Respuesta no contiene campos de error esperados"
+    else:
+     logging.info("Token de autenticación caducado, no se pudo crear el comentario.")

@@ -4,3 +4,7 @@ report.html
 style.css
 __pycache__/
 *.py[cod]
+test_log.log
+*.json
+
+README.md

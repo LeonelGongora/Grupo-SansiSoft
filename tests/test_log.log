@@ -594,3 +594,152 @@
 2025-08-02 00:38:36,016 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mazjyd
 2025-08-02 00:38:36,017 - INFO - Validando los datos de entrada contra el esquema de entrada
 2025-08-02 00:38:37,673 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 13:37:53,562 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 13:37:53,563 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 13:39:55,608 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 13:39:55,608 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 13:42:10,815 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 13:42:10,815 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 13:42:11,213 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 14:53:39,375 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 14:53:39,871 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 14:53:39,872 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 14:53:40,165 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 14:54:11,588 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 14:54:11,588 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 14:54:12,033 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 14:54:12,286 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 14:54:12,287 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 14:54:12,563 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:03:55,769 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:03:55,770 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:03:56,245 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:03:56,245 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:03:56,579 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:06:23,412 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:06:23,413 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:06:23,854 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:06:23,855 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:06:24,174 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:07:20,107 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:07:20,108 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:07:21,557 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:07:21,763 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:07:21,763 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:07:22,064 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:09:05,231 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:09:05,232 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:09:07,115 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:09:07,487 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:09:07,487 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:09:07,798 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:13:34,947 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:13:34,948 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:13:36,429 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:13:36,705 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:13:36,705 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:13:37,102 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:29:22,877 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:29:22,878 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:29:24,094 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:29:24,325 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:29:24,325 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:29:24,684 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:32:54,734 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:32:54,735 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:32:56,001 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:32:56,199 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:32:56,200 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:32:56,507 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:36:07,852 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:36:07,853 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:36:09,083 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:36:09,428 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:36:09,428 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:36:09,728 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:37:40,171 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:37:40,172 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:37:41,335 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:37:41,560 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:37:41,560 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:37:41,849 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:38:59,050 - INFO - Se va a intentar crear el comentario con el id: t3_1mazjyd
+2025-08-02 15:38:59,051 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:39:00,510 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:39:00,813 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:39:00,813 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:39:01,134 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:42:22,871 - INFO - Se va a intentar crear el comentario con el id: T3_1mf10gx
+2025-08-02 15:42:22,872 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:42:24,315 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:42:24,620 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:42:24,620 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:42:24,912 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:42:54,346 - INFO - Se va a intentar crear el comentario con el id: t3_1mf10gx
+2025-08-02 15:42:54,347 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:42:55,608 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:42:55,975 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:42:55,975 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:42:56,304 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:44:21,653 - INFO - Se va a intentar crear el comentario con el id: t3_1mf10gx
+2025-08-02 15:44:21,653 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:44:22,862 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:44:23,101 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:44:23,101 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:44:23,412 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:48:17,576 - INFO - Se va a intentar crear el comentario con el id: t3_1mf10gx
+2025-08-02 15:48:17,577 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:48:18,845 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:48:19,069 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:48:19,069 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:48:19,381 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 15:50:01,322 - INFO - Se va a intentar crear el comentario con el id: t3_1mf10gx
+2025-08-02 15:50:01,322 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 15:50:02,898 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 15:50:02,973 - INFO - validando la respuesta contra el esquema de salida
+2025-08-02 15:50:02,973 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-02 15:50:02,981 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 15:50:02,981 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 15:50:03,312 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 16:12:22,032 - INFO - Se va a intentar crear el comentario con el id: t3_1mf10gx
+2025-08-02 16:12:22,032 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 16:12:23,512 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 16:12:23,616 - INFO - validando la respuesta contra el esquema de salida
+2025-08-02 16:12:23,616 - INFO - Comentario creado exitosamente con el texto: 3ero Comentario de prueba desde test prueba \U0001f680
+2025-08-02 16:12:23,679 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 16:12:24,981 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mf10gx
+2025-08-02 16:12:26,029 - INFO - Validando que el código HTTP sea 200
+2025-08-02 16:12:26,029 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 16:12:26,034 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 16:12:26,034 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 16:12:27,074 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 16:12:27,079 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 16:12:27,079 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 16:12:27,483 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 16:12:27,494 - INFO - Validando los campos requeridos en el payload de comentario
+2025-08-02 16:12:27,536 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mf10gx
+2025-08-02 16:12:27,537 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 16:12:28,594 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 16:12:28,597 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mf10gx
+2025-08-02 16:12:28,597 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 16:12:29,601 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 16:14:16,248 - INFO - Se va a intentar crear el comentario con el id: t3_1mf10gx
+2025-08-02 16:14:16,249 - INFO - validando los datos de entrada contra el esquema de entrada
+2025-08-02 16:14:18,247 - INFO - validando que se haya creado el comentario exitosamente
+2025-08-02 16:14:18,608 - INFO - Se va a intentar crear el comentario con id invalido
+2025-08-02 16:14:19,610 - INFO - Intentando crear comentario para verificar código 200 con id: t3_1mf10gx
+2025-08-02 16:14:20,624 - INFO - Validando que el código HTTP sea 200
+2025-08-02 16:14:20,624 - INFO - \u2705 Código 200 recibido correctamente al comentar con usuario válido.
+2025-08-02 16:14:20,635 - INFO - Intentando crear un comentario sin token de autenticación.
+2025-08-02 16:14:20,636 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 16:14:21,680 - INFO - No se permite crear comentarios sin token de autenticación.
+2025-08-02 16:14:21,688 - INFO - Intentando crear un comentario con token de autenticación caducado.
+2025-08-02 16:14:21,688 - INFO - Validando los datos de entrada contra el esquema de entrada.
+2025-08-02 16:14:22,000 - INFO - Token de autenticación caducado, no se pudo crear el comentario.
+2025-08-02 16:14:22,003 - INFO - Validando los campos requeridos en el payload de comentario
+2025-08-02 16:14:22,028 - INFO - Se va a intentar crear el comentario inválido ('') con el id: t3_1mf10gx
+2025-08-02 16:14:22,029 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 16:14:23,120 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.
+2025-08-02 16:14:23,124 - INFO - Se va a intentar crear el comentario inválido (' ') con el id: t3_1mf10gx
+2025-08-02 16:14:23,125 - INFO - Validando los datos de entrada contra el esquema de entrada
+2025-08-02 16:14:24,156 - INFO - No se permite crear comentarios vacíos o con solo espacios en blanco.

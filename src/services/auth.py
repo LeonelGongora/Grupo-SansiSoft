@@ -29,7 +29,7 @@ def get_token():
         'User-Agent': user_agent
     }
 
-    res = requests.post(f'{base_url}api/v1/access_token',
+    res = requests.post(f'https://www.reddit.com/api/v1/access_token',
                         auth=auth, data=data, headers=headers)
 
     if res.status_code != 200:
