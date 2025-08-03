@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from src.assertions.post_assertions import assert_post_response_schema, assert_post_created_successfully, assert_payload_matches_schema
-from src.resources.payloads.payload_crear_post import get_create_post_payload
+from src.payloads.payload_crear_post import get_create_post_payload
 
 @pytest.mark.smoke
 @pytest.mark.functional

@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from src.services.auth import get_token
-from src.resources.helpers.create_post import create_post
+from src.redditApi.create_post import create_post
 
 @pytest.fixture(scope="session")
 def get_token_fixture():

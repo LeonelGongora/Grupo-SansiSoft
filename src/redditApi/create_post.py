@@ -1,7 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
-from src.resources.payloads.payload_crear_post import get_create_post_payload
+from src.payloads.payload_crear_post import get_create_post_payload
 
 load_dotenv()
 
