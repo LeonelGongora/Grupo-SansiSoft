@@ -40,6 +40,28 @@ def test_OI_001_reportar_usuario_exitosamentea():
 
 @pytest.mark.functional
 @pytest.mark.regression 
+def test_REPU_002_reportar_usuario_inexistente():
+
+    datos_entrada = {
+        "user": "Ok-La4sd4o",
+        "reason": "Este es un motivo para reportar a un usuario"
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 404
+
+    try:
+        jsonschema.validate(instance=respuesta.json(), schema=schema_report_user_respuesta_exitosa)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+
+@pytest.mark.functional
+@pytest.mark.regression 
 def test_REPU_003_reportar_usuario_con_token_invalido():
 
     datos_entrada = {
@@ -111,4 +133,20 @@ def test_OI_007_reportar_usuario_con_carateres_especiales():
     respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
     assert respuesta.status_code == 400
     
+@pytest.mark.functional
+@pytest.mark.regression 
+def test_OI_008_reportar_usuario_con_nombre_usuario_vacio():
 
+    datos_entrada = {
+        "user": "",
+        "reason": "Este es un motivo para reportar a un usuario"
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 400
+    
