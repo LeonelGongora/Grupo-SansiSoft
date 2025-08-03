@@ -7,8 +7,10 @@ from dotenv import load_dotenv
 import jsonschema 
 from src.redditApi.post_report_user_api import reportar_usuario_exitosamente
 from src.redditApi.post_report_user_api import reportar_usuario_con_token_invalido
+from src.redditApi.post_report_user_api import reportar_usuario_sin_token
 from src.schemas.report_user.post_report_user_exitosamente_input_schema import schema_report_user_input
 from src.schemas.report_user.post_report_user_exitosamente_response_schema import schema_report_user_respuesta_exitosa
+from src.schemas.report_user.post_report_user_sin_token_response_schema import schema_report_user_sin_token
 
 load_dotenv()
 
@@ -34,7 +36,6 @@ def test_OI_001_reportar_usuario_exitosamentea():
     except jsonschema.exceptions.ValidationError as err:
         pytest.fail(f"Esquema no coincide {err}")
 
-
 def test_REPU_003_reportar_usuario_con_token_invalido():
 
     datos_entrada = {
@@ -50,6 +51,25 @@ def test_REPU_003_reportar_usuario_con_token_invalido():
     respuesta = reportar_usuario_con_token_invalido(datos_entrada["user"], datos_entrada["reason"])
     assert respuesta.status_code == 403
 
+def test_REPU_004_reportar_usuario_sin_token():
+
+    datos_entrada = {
+        "user": "Ok-Low-2580",
+        "reason": "Este es un motivo para reportar a un usuario"
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_sin_token(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 200
+
+    try:
+        jsonschema.validate(instance=respuesta.json(), schema=schema_report_user_sin_token)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
 
     
     
