@@ -9,7 +9,6 @@ from src.payloads.payload_crear_post import get_create_post_payload
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.regression
-
 def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
     """Descripción: Crea un post exitoso validando status 200 y la estructura del payload y respuesta."""
     url = "https://oauth.reddit.com"
@@ -20,7 +19,7 @@ def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
     }
     payload = get_create_post_payload(
         subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
-        title='Buenas chavales, que opinan de este post?',
+        title='Buenas, que opinan de este post?',
         text='No leo los comentarios, pero me gusta verlos',
     )
 
