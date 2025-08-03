@@ -17,6 +17,7 @@ load_dotenv()
 
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.regression 
 def test_OI_001_reportar_usuario_exitosamentea():
 
     datos_entrada = {
@@ -37,6 +38,8 @@ def test_OI_001_reportar_usuario_exitosamentea():
     except jsonschema.exceptions.ValidationError as err:
         pytest.fail(f"Esquema no coincide {err}")
 
+@pytest.mark.functional
+@pytest.mark.regression 
 def test_REPU_003_reportar_usuario_con_token_invalido():
 
     datos_entrada = {
@@ -52,6 +55,8 @@ def test_REPU_003_reportar_usuario_con_token_invalido():
     respuesta = reportar_usuario_con_token_invalido(datos_entrada["user"], datos_entrada["reason"])
     assert respuesta.status_code == 403
 
+@pytest.mark.functional
+@pytest.mark.regression 
 def test_REPU_004_reportar_usuario_sin_token():
 
     datos_entrada = {
@@ -72,6 +77,8 @@ def test_REPU_004_reportar_usuario_sin_token():
     except jsonschema.exceptions.ValidationError as err:
         pytest.fail(f"Esquema no coincide {err}")
 
+@pytest.mark.functional
+@pytest.mark.regression 
 def test_OI_005_reportar_usuario_token_vencido():
 
     datos_entrada = {
@@ -87,7 +94,21 @@ def test_OI_005_reportar_usuario_token_vencido():
     respuesta = reportar_usuario_token_vencido(datos_entrada["user"], datos_entrada["reason"])
     assert respuesta.status_code == 401
 
+@pytest.mark.functional
+@pytest.mark.regression 
+def test_OI_007_reportar_usuario_con_carateres_especiales():
 
+    datos_entrada = {
+        "user": "Ok***/*/*",
+        "reason": "Este es un motivo para reportar a un usuario"
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
     
+    respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 400
     
 
