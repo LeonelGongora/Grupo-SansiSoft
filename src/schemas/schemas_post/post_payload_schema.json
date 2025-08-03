@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "api_type": {
@@ -35,10 +34,6 @@
     "sr",
     "title",
     "kind",
-    "text",
-    "sendreplies",
-    "spoiler",
-    "nsfw",
-    "resubmit"
+    "text"
   ]
 }

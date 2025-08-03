@@ -9,4 +9,5 @@ test_log.log
 .venv
 *.md
 README.md
-.gitignore
+
+
