@@ -50,3 +50,39 @@ def test_OI_003_obtener_info_usuario_inexistente():
         pytest.fail(f"Esquema no coincide {err}")
 
     
+@pytest.mark.functional    
+def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
+
+    datos_entrada = {}
+    nombre_usuario = "Ok***/*/*"
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+
+    respuesta = obtener_informacion(nombre_usuario)
+    assert respuesta.status_code == 400
+    
+    try:
+        jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+
+
+@pytest.mark.functional    
+def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
+
+    datos_entrada = {}
+    nombre_usuario = "Ok***/*/*"
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+
+    respuesta = obtener_informacion(nombre_usuario)
+    assert respuesta.status_code == 400
+    
+    try:
+        jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
