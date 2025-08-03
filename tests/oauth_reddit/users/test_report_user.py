@@ -150,3 +150,19 @@ def test_OI_008_reportar_usuario_con_nombre_usuario_vacio():
     respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
     assert respuesta.status_code == 400
     
+@pytest.mark.functional
+@pytest.mark.regression 
+def test_OI_009_reportar_nombre_usuario_propio():
+
+    datos_entrada = {
+        "user": "No_Apartment5800",
+        "reason": "Este es un motivo para reportar a un usuario"
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 400
