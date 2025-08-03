@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import requests
 
 load_dotenv()
-def obtener_informacion_exitosamente(username_objetivo):
+def obtener_informacion(username_objetivo):
     payload = {}
     headers = build_headers()
     url = f"{os.getenv('BASE_URL')}user/{username_objetivo}/about"

@@ -1,4 +1,4 @@
-schema_user_info_exitosamente = {
+schema_user_input = {
   "type": "object",
   "properties": {},
   "required": []
