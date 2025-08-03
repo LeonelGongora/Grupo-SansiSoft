@@ -1,0 +1,38 @@
+import json
+import requests
+import pytest
+import sys
+import os
+from dotenv import load_dotenv
+import jsonschema
+from src.redditApi.post_report_user_api import reportar_usuario_exitosamente
+from src.schemas.report_user.post_report_user_exitosamente_input_schema import schema_report_user_input
+from src.schemas.report_user.post_report_user_exitosamente_response_schema import schema_report_user_respuesta_exitosa
+
+load_dotenv()
+
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_OI_001_reportar_usuario_exitosamentea():
+
+    datos_entrada = {
+        "user": "Ok-Low-2580",
+        "reason": "Este es un motivo para reportar a un usuario"
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 200
+
+    try:
+        jsonschema.validate(instance=respuesta.json(), schema=schema_report_user_respuesta_exitosa)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+
+
+    
+
