@@ -3,10 +3,5 @@ config.py
 report.html
 style.css
 test_log.log
-__pycache__/
-*.py[cod]
-test_log.log
-*.json
-
-*.md
 README.md
+test_logs.log
