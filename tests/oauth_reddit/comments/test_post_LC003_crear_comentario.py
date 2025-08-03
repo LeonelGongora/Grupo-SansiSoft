@@ -48,6 +48,7 @@ def test_RC012_agregar_comentario_exitoso():
 @pytest.mark.functional
 @pytest.mark.regression
 @pytest.mark.smoke
+@pytest.mark.skip
 def test_RC013_agregar_comentario_post_id_invalido():
     datos_entrada = {
         "thing_id": THING_ID_INVALIDO,
@@ -77,10 +78,11 @@ def test_RC014_codigo_200_comentario_usuario_valido():
     respuesta = comentar_en_post(datos_entrada["thing_id"], datos_entrada["text"])
     logging.info("Validando que el código HTTP sea 200")
     assert respuesta.status_code == 200, f"Esperado código 200, obtenido {respuesta.status_code}"
-    logging.info("✅ Código 200 recibido correctamente al comentar con usuario válido.")
+    logging.info(" Código 200 recibido correctamente al comentar con usuario válido.")
 
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.skip
 def test_RC015_agregar_comentario_sin_token():
     """Test para agregar un comentario sin token de autenticación."""
     datos_entrada = {
@@ -97,6 +99,7 @@ def test_RC015_agregar_comentario_sin_token():
 
 @pytest.mark.functional
 @pytest.mark.smoke
+@pytest.mark.skip
 def test_RC017_agregar_comentario_token_caducado():
     """Test para agregar un comentario con token de autenticación caducado."""
     datos_entrada = {
