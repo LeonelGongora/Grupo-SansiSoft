@@ -27,3 +27,10 @@ def reportar_usuario_sin_token(usuario, razon):
     url = f"{os.getenv('BASE_URL')}api/report_user"
     response = requests.post(url, headers=headers, data=payload)
     return response
+
+def reportar_usuario_token_vencido(usuario, razon):
+    payload = crear_payload_report_user(usuario, razon)
+    headers = build_headers(token=os.getenv("REDDIT_ACCESS_TOKEN_CADUCADO"))
+    url = f"{os.getenv('BASE_URL')}api/report_user"
+    response = requests.post(url, headers=headers, data=payload)
+    return response
