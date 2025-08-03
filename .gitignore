@@ -2,3 +2,4 @@ config.py
 .env
 report.html
 style.css
+test_log.log
