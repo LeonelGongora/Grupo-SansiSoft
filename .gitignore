@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 test_log.log
 *.json
-
+.venv
 *.md
 README.md
+.gitignore
