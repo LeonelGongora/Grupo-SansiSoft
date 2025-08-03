@@ -1,0 +1,14 @@
+# from src.configuration.config import RedditAuthConfig, BASE_URL
+from src.services.auth import build_headers
+from os import getenv
+import os
+from dotenv import load_dotenv
+import requests
+
+load_dotenv()
+def obtener_informacion_exitosamente(username_objetivo):
+    payload = {}
+    headers = build_headers()
+    url = f"{os.getenv('BASE_URL')}user/{username_objetivo}/about"
+    response = requests.get(url, headers=headers, data=payload)
+    return response

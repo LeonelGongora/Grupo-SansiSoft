@@ -1,0 +1,291 @@
+schema_user_info_exitosamente_respuesta = {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "is_employee": {
+          "type": "boolean"
+        },
+        "is_friend": {
+          "type": "boolean"
+        },
+        "subreddit": {
+          "type": "object",
+          "properties": {
+            "default_set": {
+              "type": "boolean"
+            },
+            "user_is_contributor": {
+              "type": "boolean"
+            },
+            "banner_img": {
+              "type": "string"
+            },
+            "allowed_media_in_comments": {
+              "type": "array",
+              "items": {}
+            },
+            "user_is_banned": {
+              "type": "boolean"
+            },
+            "free_form_reports": {
+              "type": "boolean"
+            },
+            "community_icon": {},
+            "show_media": {
+              "type": "boolean"
+            },
+            "icon_color": {
+              "type": "string"
+            },
+            "user_is_muted": {},
+            "display_name": {
+              "type": "string"
+            },
+            "header_img": {},
+            "title": {
+              "type": "string"
+            },
+            "previous_names": {
+              "type": "array",
+              "items": {}
+            },
+            "over_18": {
+              "type": "boolean"
+            },
+            "icon_size": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "primary_color": {
+              "type": "string"
+            },
+            "icon_img": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "submit_link_label": {
+              "type": "string"
+            },
+            "header_size": {},
+            "restrict_posting": {
+              "type": "boolean"
+            },
+            "restrict_commenting": {
+              "type": "boolean"
+            },
+            "subscribers": {
+              "type": "number"
+            },
+            "submit_text_label": {
+              "type": "string"
+            },
+            "is_default_icon": {
+              "type": "boolean"
+            },
+            "link_flair_position": {
+              "type": "string"
+            },
+            "display_name_prefixed": {
+              "type": "string"
+            },
+            "key_color": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "is_default_banner": {
+              "type": "boolean"
+            },
+            "url": {
+              "type": "string"
+            },
+            "quarantine": {
+              "type": "boolean"
+            },
+            "banner_size": {},
+            "user_is_moderator": {
+              "type": "boolean"
+            },
+            "accept_followers": {
+              "type": "boolean"
+            },
+            "public_description": {
+              "type": "string"
+            },
+            "link_flair_enabled": {
+              "type": "boolean"
+            },
+            "disable_contributor_requests": {
+              "type": "boolean"
+            },
+            "subreddit_type": {
+              "type": "string"
+            },
+            "user_is_subscriber": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "default_set",
+            "user_is_contributor",
+            "banner_img",
+            "allowed_media_in_comments",
+            "user_is_banned",
+            "free_form_reports",
+            "community_icon",
+            "show_media",
+            "icon_color",
+            "user_is_muted",
+            "display_name",
+            "header_img",
+            "title",
+            "previous_names",
+            "over_18",
+            "icon_size",
+            "primary_color",
+            "icon_img",
+            "description",
+            "submit_link_label",
+            "header_size",
+            "restrict_posting",
+            "restrict_commenting",
+            "subscribers",
+            "submit_text_label",
+            "is_default_icon",
+            "link_flair_position",
+            "display_name_prefixed",
+            "key_color",
+            "name",
+            "is_default_banner",
+            "url",
+            "quarantine",
+            "banner_size",
+            "user_is_moderator",
+            "accept_followers",
+            "public_description",
+            "link_flair_enabled",
+            "disable_contributor_requests",
+            "subreddit_type",
+            "user_is_subscriber"
+          ]
+        },
+        "snoovatar_size": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "awardee_karma": {
+          "type": "number"
+        },
+        "id": {
+          "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "is_gold": {
+          "type": "boolean"
+        },
+        "is_mod": {
+          "type": "boolean"
+        },
+        "awarder_karma": {
+          "type": "number"
+        },
+        "has_verified_email": {
+          "type": "boolean"
+        },
+        "icon_img": {
+          "type": "string"
+        },
+        "hide_from_robots": {
+          "type": "boolean"
+        },
+        "link_karma": {
+          "type": "number"
+        },
+        "pref_show_snoovatar": {
+          "type": "boolean"
+        },
+        "is_blocked": {
+          "type": "boolean"
+        },
+        "total_karma": {
+          "type": "number"
+        },
+        "accept_chats": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created": {
+          "type": "number"
+        },
+        "created_utc": {
+          "type": "number"
+        },
+        "snoovatar_img": {
+          "type": "string"
+        },
+        "comment_karma": {
+          "type": "number"
+        },
+        "accept_followers": {
+          "type": "boolean"
+        },
+        "has_subscribed": {
+          "type": "boolean"
+        },
+        "accept_pms": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "is_employee",
+        "is_friend",
+        "subreddit",
+        "snoovatar_size",
+        "awardee_karma",
+        "id",
+        "verified",
+        "is_gold",
+        "is_mod",
+        "awarder_karma",
+        "has_verified_email",
+        "icon_img",
+        "hide_from_robots",
+        "link_karma",
+        "pref_show_snoovatar",
+        "is_blocked",
+        "total_karma",
+        "accept_chats",
+        "name",
+        "created",
+        "created_utc",
+        "snoovatar_img",
+        "comment_karma",
+        "accept_followers",
+        "has_subscribed",
+        "accept_pms"
+      ]
+    }
+  },
+  "required": [
+    "kind",
+    "data"
+  ]
+}
