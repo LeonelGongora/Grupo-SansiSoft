@@ -16,6 +16,7 @@ load_dotenv()
 
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.regression
 def test_OI_001_obtener_info_usuario_existente():
 
     datos_entrada = {}
@@ -33,7 +34,8 @@ def test_OI_001_obtener_info_usuario_existente():
     except jsonschema.exceptions.ValidationError as err:
         pytest.fail(f"Esquema no coincide {err}")
 
-@pytest.mark.functional    
+@pytest.mark.functional   
+@pytest.mark.regression 
 def test_OI_003_obtener_info_usuario_inexistente():
 
     datos_entrada = {}
@@ -52,7 +54,8 @@ def test_OI_003_obtener_info_usuario_inexistente():
         pytest.fail(f"Esquema no coincide {err}")
 
     
-@pytest.mark.functional    
+@pytest.mark.functional   
+@pytest.mark.regression 
 def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
 
     datos_entrada = {}
@@ -70,26 +73,8 @@ def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
     except jsonschema.exceptions.ValidationError as err:
         pytest.fail(f"Esquema no coincide {err}")
 
-
-@pytest.mark.functional    
-def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
-
-    datos_entrada = {}
-    nombre_usuario = "Ok***/*/*"
-    try:
-        jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
-    except jsonschema.exceptions.ValidationError as err:
-        pytest.fail(f"Esquema no coincide {err}")
-
-    respuesta = obtener_informacion(nombre_usuario)
-    assert respuesta.status_code == 400
-    
-    try:
-        jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
-    except jsonschema.exceptions.ValidationError as err:
-        pytest.fail(f"Esquema no coincide {err}")
-
-@pytest.mark.functional    
+@pytest.mark.functional  
+@pytest.mark.regression  
 def test_OI_005_obtener_info_token_caducado():
 
     datos_entrada = {}
@@ -102,7 +87,8 @@ def test_OI_005_obtener_info_token_caducado():
     respuesta = obtener_informacion_con_token_caducado(nombre_usuario)
     assert respuesta.status_code == 401
     
-@pytest.mark.functional    
+@pytest.mark.functional 
+@pytest.mark.regression   
 def test_OI_006_obtener_info_token_invalido():
 
     datos_entrada = {}

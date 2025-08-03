@@ -1,6 +1,4 @@
 schema_user_info_exitosamente_respuesta = {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Generated schema for Root",
   "type": "object",
   "properties": {
     "kind": {
