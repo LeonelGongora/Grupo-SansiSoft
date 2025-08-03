@@ -13,8 +13,9 @@ def get_token_fixture():
 def created_post_id():
     return create_post(
     token=get_token(),
-    title="Mi publicacion para mis test de prueba",
-    text="Este texto lo escribo para todos los tests de prueba"
+    title='Hola amigos, como se levantaron hoy?',
+    text="Este texto lo escribo para que lo lean",
+    user_agent=os.getenv("REDDIT_USER_AGENT")
     )
 
 @pytest.fixture(scope="session")

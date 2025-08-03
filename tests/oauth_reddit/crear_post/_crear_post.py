@@ -1,30 +1,29 @@
 import requests
 import pytest
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from src.assertions.post_assertions import assert_post_response_schema, assert_post_created_successfully, assert_payload_matches_schema
+from src.resources.payloads.payload_crear_post import get_create_post_payload
 
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.regression
 
-def test_CP001_create_post(get_token_fixture, get_user_agent):
-    """Descripción: Crea un post exitoso validando status 200 y estructura del payload y respuesta."""
+def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
+    """Descripción: Crea un post exitoso validando status 200 y la estructura del payload y respuesta."""
     url = "https://oauth.reddit.com"
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent,
         'Content-Type': 'application/x-www-form-urlencoded'
     }
-    payload = {
-        'api_type': 'json',
-        'sr': 'u_IceOld4091',
-        'title': 'Publicacion de prueba con Python con OAuth',
-        'kind': 'self',
-        'text': 'Esta es la descripcion de una publicación de prueba.',
-        'sendreplies': 'true',
-        'spoiler': 'false',
-        'nsfw': 'false',
-        'resubmit': 'true'
-    }
+    payload = get_create_post_payload(
+        subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
+        title='Buenas chavales, que opinan de este post?',
+        text='No leo los comentarios, pero me gusta verlos',
+    )
+
       # Validación del payload antes de enviar 
     assert_payload_matches_schema(payload)
 

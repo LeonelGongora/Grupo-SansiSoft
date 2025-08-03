@@ -23,3 +23,19 @@ def assert_status_code(response, expected_status=200):
     actual_status = response.status_code
     assert actual_status == expected_status, f"Expected {expected_status} but got {actual_status}"
 
+def assert_required_post_fields_present(response_json):
+    """
+    Verifica que los campos requeridos estén presentes.
+    Campos requeridos: subreddit, author_fullname, title, id, url
+    """
+    children = response_json.get("data", {}).get("children", [])
+    assert children, "La respuesta no contiene posts en 'children'"
+
+    post_data = children[0].get("data", {})
+    required_fields = ["subreddit", "author_fullname", "title", "id", "url"]
+
+    for field in required_fields:
+        assert field in post_data, f"Falta el campo requerido: {field}"
+        assert post_data[field] is not None, f"El campo {field} está presente pero es None"
+
+

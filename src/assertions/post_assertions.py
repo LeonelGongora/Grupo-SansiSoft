@@ -1,7 +1,7 @@
 import jsonschema
 import json
 import os
-
+from src.logs.logger import logger
 
 def assert_payload_matches_schema(payload):
     # Ruta absoluta al archivo de esquema fijo
@@ -25,4 +25,5 @@ def assert_post_response_schema(response_json):
 def assert_post_created_successfully(response):
     assert response.status_code == 200, f"Expected 200 but got {response.status_code}"
     assert "json" in response.json()
+    logger.debug(response.json())
     assert response.json()["json"]["errors"] == []
