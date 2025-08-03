@@ -2,10 +2,5 @@ config.py
 .env
 report.html
 style.css
-__pycache__/
-*.py[cod]
-test_log.log
-*.json
-
-*.md
 README.md
+test_logs.log
