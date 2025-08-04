@@ -37,4 +37,3 @@ def get_token():
 
     return res.json()['access_token']
 
-

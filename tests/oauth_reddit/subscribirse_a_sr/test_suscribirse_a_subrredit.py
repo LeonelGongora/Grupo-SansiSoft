@@ -1,56 +1,45 @@
+import os
+
 import requests
 import pytest
 import logging
 from src.assertions.post_suscribirse_assertions import assert_post_response_schema, assert_post_created_successfully, assert_payload_matches_schema,assert_subscribe_success_empty_response,assert_response_forbidden,assert_response_not_found,assert_response_unauthorized
 
-
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
-
-
+get_url = "https://oauth.reddit.com"
+endpoint = "/api/subscribe"
+url = get_url + endpoint
+nombre_sr="test"
 @pytest.mark.functional
 @pytest.mark.smoke
 def test_SCRUM_T40_Suscribirse_a_un_subreddit_existente(get_token_fixture):
     """Verificar que un usuario autenticado pueda suscribirse a un subreddit existente
     mediante la API de Reddit. """""
-    get_url = "https://oauth.reddit.com"
-    endpoint = "/api/subscribe"
-    url = get_url + endpoint
 
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
-        "Content-Type": "application/x-www-form-urlencoded",
         "User-Agent": "MiScriptQA/0.1"
     }
     payload = {
         "action": "sub",
-        "sr_name": "test"#nombre del subreddit
-
-    }
+        "sr_name": nombre_sr#nombre del subreddit
+        }
     logger.info(f"Host: {get_url}")
     logger.debug(f"POST {url}")
     logger.debug(f"Headers: {headers}")
     logger.debug(f"Payload: {payload}")
-
     assert_payload_matches_schema(payload)
     response = requests.post(url, headers=headers, data=payload)#est bien
     logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Response body:\n{response.text}")
-
     assert_subscribe_success_empty_response(response)
     print(response.text)
-
-
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.smoke
 def test_SCRUM_T72_suscribirse_subreddit_inexistente(get_token_fixture):
     """Verifica que no se pueda suscribir a un subreddit inexistente con un token válido."""""
-
-    get_url = "https://oauth.reddit.com"
-    endpoint = "/api/subscribe"
-    url = get_url + endpoint
-
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
         "Content-Type": "application/x-www-form-urlencoded",
@@ -78,9 +67,6 @@ def test_SCRUM_T72_suscribirse_subreddit_inexistente(get_token_fixture):
 @pytest.mark.smoke
 def test_SCRUM_T73_suscribirse_sin_token():
         """Verifica que no se pueda suscribir sin un token de autenticación."""""
-        get_url = "https://oauth.reddit.com"
-        endpoint = "/api/subscribe"
-        url = get_url + endpoint
 
         headers = {
 
@@ -89,13 +75,12 @@ def test_SCRUM_T73_suscribirse_sin_token():
         }
         payload = {
             "action": "sub",
-            "sr_name": "test"
+            "sr_name": nombre_sr
         }
         logger.info(f"Host: {get_url}")
         logger.debug(f"POST {url}")
         logger.debug(f"Headers: {headers}")
         logger.debug(f"Payload: {payload}")
-
         assert_payload_matches_schema(payload)
         response = requests.post(url, headers=headers, data=payload)
         logger.info(f"Status code: {response.status_code}")
@@ -113,31 +98,24 @@ def test_SCRUM_T73_suscribirse_sin_token():
 @pytest.mark.smoke
 def test_SCRUM_T74_suscribirse_token_caducado():
             """Verifica que no se pueda suscribir usando un token expirado."""""
-            get_url = "https://oauth.reddit.com"
-            endpoint = "/api/subscribe"
-            url = get_url + endpoint
-            get_token_fixture="eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzUzNzIwNDk3LjIyNjg4NSwiaWF0IjoxNzUzNjM0MDk3LjIyNjg4NSwianRpIjoiYlYxdnkteGRVYVNFcUpuem1GcmZab081ZFNZdkV3IiwiY2lkIjoibGJyTV9oM3BESERleTNpckpLcTJfQSIsImxpZCI6InQyXzF1YWt2ajI3c2ciLCJhaWQiOiJ0Ml8xdWFrdmoyN3NnIiwibGNhIjoxNzUzNDU4MzAwMDIxLCJzY3AiOiJlSnlLVnRKU2lnVUVBQURfX3dOekFTYyIsImZsbyI6OX0.i5QbQkOmRTG7k2HvhTVCw-q1Y3xqUz-Ni4DjhHvtyst53zHJUrdWGt24QBFObCy1eEu_2CL9Z3n3Ay4A8_Y_FYaqlZpYV3KMOvU63ZyWyqjzs0dAhiOcQEnW6XrWbzQ4YnirXTsawshy8khj6h3pXRMiKhnBdQkl15gxQVjp6wsAUN5L4GLFrWeUM0lJqzvPi6kfWYgkELj6BL65n99jYlnjK_7MZyl2eiYpQAPMCKHFBrv7j8Vd-eccN8YiMrlyIoXdkcTb4T3S-9RjPWRX7ZvtX1C652q1hv2h4IfTkGQ4jnylhDuaBvR8vvt-HmCLqamBJspevbF-2J4UZO2QKw"
+            tokken_inv = os.getenv("TOKEN_CADUCEUS")
             headers = {
-                'Authorization': f'bearer {get_token_fixture}',
+                'Authorization': f'bearer {tokken_inv}',
                 "Content-Type": "application/x-www-form-urlencoded",
                 "User-Agent": "MiScriptQA/0.1"
             }
             payload = {
                 "action": "sub",
-                "sr_name": "test"
+                "sr_name": nombre_sr
             }
             logger.info(f"Host: {get_url}")
             logger.debug(f"POST {url}")
             logger.debug(f"Headers: {headers}")
             logger.debug(f"Payload: {payload}")
-
-
-
             assert_payload_matches_schema(payload)
             response = requests.post(url, headers=headers, data=payload)
             logger.info(f"Status code: {response.status_code}")
             logger.debug(f"Response body:\n{response.text}")
-
             assert_response_unauthorized(response)
             print(response.text)
 
@@ -146,9 +124,6 @@ def test_SCRUM_T74_suscribirse_token_caducado():
 @pytest.mark.smoke
 def test_SCRUM_T75_suscribirse_token_invalido():
                 """Verifica que no se pueda suscribir usando un token malformado o inválido."""""
-                get_url = "https://oauth.reddit.com"
-                endpoint = "/api/subscribe"
-                url = get_url + endpoint
                 get_token_fixture="tokken_invalido"
                 headers = {
                     'Authorization': f'bearer {get_token_fixture}',
@@ -157,7 +132,7 @@ def test_SCRUM_T75_suscribirse_token_invalido():
                 }
                 payload = {
                     "action": "sub",
-                    "sr_name": "test"
+                    "sr_name": nombre_sr
                 }
                 logger.info(f"Host: {get_url}")
                 logger.debug(f"POST {url}")
