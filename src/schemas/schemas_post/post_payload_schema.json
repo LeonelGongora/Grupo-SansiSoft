@@ -33,7 +33,6 @@
     "api_type",
     "sr",
     "title",
-    "kind",
-    "text"
+    "kind"
   ]
 }
