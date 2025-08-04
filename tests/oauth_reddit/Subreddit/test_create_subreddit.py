@@ -95,3 +95,16 @@ def test_SCRUM_T43_token_expirado():
     assert "invalid_token" in response.text or "Unauthorized" in response.text, "No se encontró mensaje de error por token inválido"
     print("✅ SRB-003: El sistema rechazó correctamente el token expirado.")
 
+
+def test_SCRUM_T44_sin_token():
+    nombre = generate_unique_name("SinToken")
+    payload = get_create_subreddit_payload(nombre)
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "User-Agent": "MiScriptQA/0.1"
+    }
+    response = requests.post(URL, headers=headers, data=payload)
+
+    assert response.status_code == 401, f"Esperado 401 sin token, recibido {response.status_code}"
+    assert "Unauthorized" in response.text, "No se encontró mensaje de autorización requerida"
+    print("✅ SRB-004: La API rechazó correctamente la solicitud sin token.")

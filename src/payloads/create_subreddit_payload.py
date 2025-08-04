@@ -10,5 +10,6 @@ def get_create_subreddit_payload(name, description="Este es un subreddit de prue
         "link_type": "any",
         "submit_text": "Bienvenido a este subreddit",
         "wiki_edit_age": 0,
-        "wiki_edit_karma": 0
+        "wiki_edit_karma": 0,
+        "api_type": "json"
     }
