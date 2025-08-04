@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "json": {
+      "type": "object",
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {}
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "drafts_count": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "id",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "errors",
+        "data"
+      ]
+    }
+  },
+  "required": [
+    "json"
+  ]
+}

@@ -19,7 +19,7 @@ def test_SCRUM_T40_Suscribirse_a_un_subreddit_existente(get_token_fixture):
 
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
-        "User-Agent": "MiScriptQA/0.1"
+        "User-Agent": "mi_script_de_prueba:0.1 (by u/Big_Title7158)"
     }
     payload = {
         "action": "sub",
@@ -43,7 +43,7 @@ def test_SCRUM_T72_suscribirse_subreddit_inexistente(get_token_fixture):
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
         "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "MiScriptQA/0.1"
+        "User-Agent": "mi_script_de_prueba:0.1 (by u/Big_Title7158)"
     }
     payload = {
         "action": "sub",
@@ -71,7 +71,7 @@ def test_SCRUM_T73_suscribirse_sin_token():
         headers = {
 
             "Content-Type": "application/x-www-form-urlencoded",
-            "User-Agent": "MiScriptQA/0.1"
+            "User-Agent": "mi_script_de_prueba:0.1 (by u/Big_Title7158)"
         }
         payload = {
             "action": "sub",
@@ -102,7 +102,7 @@ def test_SCRUM_T74_suscribirse_token_caducado():
             headers = {
                 'Authorization': f'bearer {tokken_inv}',
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent": "MiScriptQA/0.1"
+                "User-Agent": "mi_script_de_prueba:0.1 (by u/Big_Title7158)"
             }
             payload = {
                 "action": "sub",
@@ -128,7 +128,7 @@ def test_SCRUM_T75_suscribirse_token_invalido():
                 headers = {
                     'Authorization': f'bearer {get_token_fixture}',
                     "Content-Type": "application/x-www-form-urlencoded",
-                    "User-Agent": "MiScriptQA/0.1"
+                    "User-Agent": "mi_script_de_prueba:0.1 (by u/Big_Title7158)"
                 }
                 payload = {
                     "action": "sub",
