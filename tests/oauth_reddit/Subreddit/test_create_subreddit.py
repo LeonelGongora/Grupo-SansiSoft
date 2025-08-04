@@ -13,6 +13,8 @@ from src.assertions.subreddit_assertions import (
     assert_subreddit_created_successfully,
     assert_subreddit_response_schema
 )
+from src.assertions.subreddit_assertions import assert_subreddit_creation_failed
+
 from src.schemas.subreddit.subreddit_schema_input import input_schema
 
 logger = logging.getLogger(__name__)
@@ -108,3 +110,20 @@ def test_SCRUM_T44_sin_token():
     assert response.status_code == 401, f"Esperado 401 sin token, recibido {response.status_code}"
     assert "Unauthorized" in response.text, "No se encontró mensaje de autorización requerida"
     print("✅ SRB-004: La API rechazó correctamente la solicitud sin token.")
+
+
+def test_SCRUM_T45_nombre_minimo(get_token_fixture):
+    nombre = generate_unique_name("abc")[:3]  # 3 caracteres: debería fallar
+    payload = get_create_subreddit_payload(nombre)
+    headers = {
+        'Authorization': f'bearer {get_token_fixture}',
+        "Content-Type": "application/x-www-form-urlencoded",
+        "User-Agent": "MiScriptQA/0.1"
+    }
+
+    response = requests.post(URL, headers=headers, data=payload)
+    
+    print("🔢 Código de estado:", response.status_code)
+    print("📝 Texto de respuesta:", response.text)
+
+    assert_subreddit_creation_failed(response, expected_error="INVALID_NAME")

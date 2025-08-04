@@ -51,3 +51,16 @@ def assert_subreddit_response_schema(json_response):
         print("✅ La respuesta cumple con el esquema general de subreddit.")
     except jsonschema.exceptions.ValidationError as e:
         raise AssertionError(f"❌ La respuesta no cumple con el esquema de subreddit: {e}")
+
+
+def assert_subreddit_creation_failed(response, expected_error=None):
+    assert response.status_code in [400, 403, 409], f"❌ Esperado código de error, recibido {response.status_code}"
+    json_response = response.json()
+
+    # Verifica si hay errores dentro de la respuesta
+    assert "json" in json_response, "❌ La respuesta no contiene el campo 'json'"
+    assert "errors" in json_response["json"], "❌ La respuesta no contiene el campo 'errors'"
+
+    if expected_error:
+        error_codes = [e[0] for e in json_response["json"]["errors"]]
+        assert expected_error in error_codes, f"❌ Error esperado '{expected_error}' no encontrado. Errores recibidos: {error_codes}"
