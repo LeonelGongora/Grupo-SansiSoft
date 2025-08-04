@@ -5,3 +5,6 @@ style.css
 test_log.log
 README.md
 test_logs.log
+# Ignorar archivos compilados de Python
+__pycache__/
+*.py[cod]
