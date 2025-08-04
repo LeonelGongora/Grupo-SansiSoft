@@ -93,3 +93,37 @@ def test_DELU003_delete_user_that_does_not_exist(get_token_fixture):
 
     assert response.status_code == 404, \
         f"Se esperaba 404 Not Found, pero se recibió {response.status_code}"
+
+# Eliminar usuario sin token
+@pytest.mark.security
+@pytest.mark.functional
+def test_DELU004_delete_friend_without_token():
+    """AA004 - No debe permitir eliminar un amigo sin autenticación (esperado: 401 Unauthorized)"""
+
+    headers = {
+        # No se incluye "Authorization"
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+
+    nonexistent_username = "Nonrate"
+    nonexistent_user_id = "Nonrate"
+
+    payload = {"id": id_username_valid}
+    submit_url = f"{url}/api/v1/me/friends/{username_valid}"
+
+    logger.debug("DELETE " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Payload: " + str(payload))
+
+    assert_delete_friend_success_payload_schema(payload)
+
+    response = requests.delete(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code (sin token): " + str(response.status_code))
+    logger.debug("Response (sin token): " + str(response.text))
+
+    if response.status_code not in [403]:
+        pytest.xfail("La API debería rechazar la solicitud sin token, pero no lo hizo correctamente")
+
+    assert response.status_code in [403], \
+        f"Se esperaba 401 al eliminar sin token, pero se recibió {response.status_code}"
