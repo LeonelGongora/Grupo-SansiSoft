@@ -16,10 +16,10 @@ from src.assertions.get_post_assertions import assert_status_code
 
 @pytest.mark.smoke
 @pytest.mark.functional
-
+@pytest.mark.regression
 @pytest.mark.ejecutar
-def test_CP001_create_post(get_token_fixture):
-    """Descripción: Crea un post exitoso validando status 200 y estructura del payload y respuesta."""
+def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
+    """Descripción: Crea un post exitoso validando status 200 y la estructura del payload y respuesta."""
     url = "https://oauth.reddit.com"
     headers = get_create_post_headers(
         token=get_token_fixture,
@@ -42,7 +42,6 @@ def test_CP001_create_post(get_token_fixture):
     logger.debug(f"Respuesta JSON al crear post exitoso: {response_json}")
     # Assertions
     assert_post_created_successfully(response)
-    print(response_json["json"]["data"]["url"])
     assert_post_response_schema(response_json)
 
 @pytest.mark.functional

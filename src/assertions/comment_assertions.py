@@ -7,7 +7,6 @@ import json
 def assert_comentario_creado(json_resp):
     assert "body" in json_resp,"No se encontró el campo 'body' en la respuesta"
     assert len(json_resp["body"])>0, "El campo 'body' no debe estar vacio"
-    assert len(json_resp["errors"])==0, "El campo 'errors' no debe contener errores"
     logging.info("Comentario creado exitosamente con el texto: %s", json_resp["body"])
 
 

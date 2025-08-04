@@ -1,7 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
-
+import logging
 # Cargar variables desde el archivo .env
 load_dotenv()
 
@@ -31,7 +31,6 @@ def get_token():
 
     res = requests.post(f'https://www.reddit.com/api/v1/access_token',
                         auth=auth, data=data, headers=headers)
-
     if res.status_code != 200:
         raise Exception(f"Error autenticando: {res.text}")   
     return res.json()['access_token']
