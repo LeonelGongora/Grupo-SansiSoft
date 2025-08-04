@@ -75,3 +75,23 @@ def test_SCRUM_T42_crear_subreddit_existente(get_token_fixture):
     assert "already exists" in response.text or "SUBREDDIT_EXISTS" in response.text, \
         "No se recibió mensaje de error esperado por subreddit duplicado"
 
+ #SRB-003: Token expirado — Funcional - Negativo
+@pytest.mark.negative
+def test_SCRUM_T43_token_expirado():
+    nombre = generate_unique_name("SubredditTokenExpirado")
+    payload = get_create_subreddit_payload(nombre)
+    
+    token_invalido = os.getenv("TOKEN_CADUCEUS")
+
+    headers = {
+        'Authorization': f'bearer {token_invalido}',
+        "Content-Type": "application/x-www-form-urlencoded",
+        "User-Agent": "MiScriptQA/0.1"
+    }
+
+    response = requests.post(URL, headers=headers, data=payload)
+    
+    assert response.status_code == 401, f"Esperado 401 por token expirado, recibido {response.status_code}"
+    assert "invalid_token" in response.text or "Unauthorized" in response.text, "No se encontró mensaje de error por token inválido"
+    print("✅ SRB-003: El sistema rechazó correctamente el token expirado.")
+
