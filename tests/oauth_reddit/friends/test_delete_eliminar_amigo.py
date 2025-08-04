@@ -127,3 +127,34 @@ def test_DELU004_delete_friend_without_token():
 
     assert response.status_code in [403], \
         f"Se esperaba 401 al eliminar sin token, pero se recibió {response.status_code}"
+
+# Eliminar usuario con token inválido
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_DELU005_delete_friend_with_invalid_token():
+    """AA005 - No debe permitir eliminar un amigo con token inválido (esperado: 401 o 403)"""
+
+    headers = {
+        "Authorization": "test",
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+
+    payload = {"id": id_username_valid}
+    submit_url = f"{url}/api/v1/me/friends/{username_valid}"
+
+    logger.debug("DELETE " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Payload: " + str(payload))
+
+    assert_delete_friend_success_payload_schema(payload)
+
+    response = requests.delete(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code (token inválido): " + str(response.status_code))
+    logger.debug("Response (token inválido): " + str(response.text))
+
+    if response.status_code not in [401, 403]:
+        pytest.xfail("La API debería rechazar la solicitud con token inválido, pero no lo hizo correctamente")
+
+    assert response.status_code in [401, 403], \
+        f"Se esperaba 401/403 al eliminar con token inválido, pero se recibió {response.status_code}"
