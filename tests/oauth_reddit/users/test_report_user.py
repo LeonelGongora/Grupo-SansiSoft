@@ -23,7 +23,7 @@ load_dotenv()
 def test_OI_001_reportar_usuario_exitosamentea():
 
     datos_entrada = {
-        "user": "Ok-Low-2580",
+        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -45,7 +45,7 @@ def test_OI_001_reportar_usuario_exitosamentea():
 def test_REPU_002_reportar_usuario_inexistente():
 
     datos_entrada = {
-        "user": "Ok-La4sd4o",
+        "user": os.getenv('REDDIT_USERNAME_INEXISTENTE'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -67,7 +67,7 @@ def test_REPU_002_reportar_usuario_inexistente():
 def test_REPU_003_reportar_usuario_con_token_invalido():
 
     datos_entrada = {
-        "user": "Ok-Low-2580",
+        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -84,7 +84,7 @@ def test_REPU_003_reportar_usuario_con_token_invalido():
 def test_REPU_004_reportar_usuario_sin_token():
 
     datos_entrada = {
-        "user": "Ok-Low-2580",
+        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -106,7 +106,7 @@ def test_REPU_004_reportar_usuario_sin_token():
 def test_OI_005_reportar_usuario_token_vencido():
 
     datos_entrada = {
-        "user": "Ok-Low-2580",
+        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -140,7 +140,7 @@ def test_OI_006_reportar_usuario_con_reason_superando_100_caracteres():
 def test_OI_007_reportar_usuario_con_carateres_especiales():
 
     datos_entrada = {
-        "user": "Ok***/*/*",
+        "user": os.getenv('REDDIT_USERNAME_CARACTERES_ESPECIALES'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -174,7 +174,7 @@ def test_OI_008_reportar_usuario_con_nombre_usuario_vacio():
 def test_OI_009_reportar_nombre_usuario_propio():
 
     datos_entrada = {
-        "user": "No_Apartment5800",
+        "user": os.getenv('REDDIT_USERNAME'),
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
