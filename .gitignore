@@ -5,3 +5,5 @@ style.css
 .pytest_cache/
 __pycache__/
 .python-version
+README.md
+test_logs.log
