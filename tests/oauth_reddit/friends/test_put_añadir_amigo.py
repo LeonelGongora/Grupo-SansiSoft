@@ -189,6 +189,7 @@ def test_AA008_add_friend_with_invalid_query_params(get_token_fixture):
     # Aceptable: cualquier otro status (400, 403, 422, etc.)
     assert response.status_code != 200
         
+# Agregar amigo con payload vacio       
 @pytest.mark.smoke
 @pytest.mark.functional
 def test_AA009_add_friend_with_empty_payload(get_token_fixture):
@@ -221,27 +222,23 @@ def test_AA009_add_friend_with_empty_payload(get_token_fixture):
     # Aceptable: cualquier otro status (400, 422, etc.)
     assert response.status_code != 200
 
+# Agregar amigo con username con caracteres especiales
 @pytest.mark.smoke
 @pytest.mark.functional
-def test_AA009_add_friend_with_special_chars(get_token_fixture):
+def test_AA010_add_friend_with_special_chars(get_token_fixture):
     """AA009 - No debe retornar 200 cuando se envía un username con caracteres especiales"""
-
     token = f"Bearer {get_token_fixture}"
-
     headers = {
         "Authorization": token,
         "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
         "Content-Type": "application/json",
     }
-
     # Username con caracteres especiales no válidos
     invalid_username = "inv@lid_user!#"
-
     # Payload vacío
     payload = {
         "name": "inv@lid_user!#"
     }
-
     submit_url = f"{url}/api/v1/me/friends/{invalid_username}"
 
     logger.debug("PUT " + submit_url + " HEADERS " + str(headers))
@@ -256,4 +253,40 @@ def test_AA009_add_friend_with_special_chars(get_token_fixture):
         pytest.xfail("Se esperaba que la API rechazara el username inválido, pero devolvió 200 OK")
 
     # Aceptable: cualquier otro status (400, 422, etc.)
+    assert response.status_code != 200
+# Agregarse de maigo asi mismo
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_AA011_add_self_as_friend(get_token_fixture):
+    """AA011 - No debe ser posible agregarse a sí mismo como amigo"""
+
+    token = f"Bearer {get_token_fixture}"
+    
+    headers = {
+        "Authorization": token,
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+
+    # Asume que este es el username del usuario autenticado (puede venir de la API o fixture)
+    current_user = os.getenv("REDDIT_USERNAME")
+
+    payload = {
+        "name": current_user
+    }
+
+    submit_url = f"{url}/api/v1/me/friends/{current_user}"
+
+    logger.debug("PUT " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Intentando agregarse a sí mismo con payload: " + str(payload))
+
+    response = requests.put(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code: " + str(response.status_code))
+    logger.debug("Response: " + str(response.text))
+
+    if response.status_code == 200:
+        pytest.xfail("Se esperaba que la API rechazara el intento de agregarse a sí mismo, pero devolvió 200 OK")
+
+    # Códigos válidos: 400, 403, 422, etc.
     assert response.status_code != 200
