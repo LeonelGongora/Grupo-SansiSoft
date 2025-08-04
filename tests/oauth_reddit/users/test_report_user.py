@@ -8,10 +8,12 @@ import jsonschema
 from src.redditApi.post_report_user_api import reportar_usuario_exitosamente
 from src.redditApi.post_report_user_api import reportar_usuario_con_token_invalido
 from src.redditApi.post_report_user_api import reportar_usuario_sin_token
-from src.redditApi.post_report_user_api import reportar_usuario_token_vencido
+from src.redditApi.post_report_user_api import reportar_usuario_token_vencido  
+from src.redditApi.post_report_user_api import reportar_usuario_sin_reason
 from src.schemas.report_user.post_report_user_exitosamente_input_schema import schema_report_user_input
 from src.schemas.report_user.post_report_user_exitosamente_response_schema import schema_report_user_respuesta_exitosa
-from src.schemas.report_user.post_report_user_sin_token_response_schema import schema_report_user_sin_token
+from src.schemas.report_user.post_report_user_sin_token_response_schema import schema_report_user_sin_token 
+from src.schemas.report_user.post_report_user_sin_reason_schema import schema_report_user_sin_razon
 
 load_dotenv()
 
@@ -182,4 +184,20 @@ def test_OI_009_reportar_nombre_usuario_propio():
         pytest.fail(f"Esquema no coincide {err}")
     
     respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 400
+
+@pytest.mark.functional
+@pytest.mark.regression 
+def test_OI_010_reportar_usuario_sin_reason():
+
+    datos_entrada = {
+        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_sin_razon)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_sin_reason(datos_entrada["user"])
     assert respuesta.status_code == 400
