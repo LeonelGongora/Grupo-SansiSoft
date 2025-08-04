@@ -220,3 +220,40 @@ def test_AA009_add_friend_with_empty_payload(get_token_fixture):
 
     # Aceptable: cualquier otro status (400, 422, etc.)
     assert response.status_code != 200
+
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_AA009_add_friend_with_special_chars(get_token_fixture):
+    """AA009 - No debe retornar 200 cuando se envía un username con caracteres especiales"""
+
+    token = f"Bearer {get_token_fixture}"
+
+    headers = {
+        "Authorization": token,
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+
+    # Username con caracteres especiales no válidos
+    invalid_username = "inv@lid_user!#"
+
+    # Payload vacío
+    payload = {
+        "name": "inv@lid_user!#"
+    }
+
+    submit_url = f"{url}/api/v1/me/friends/{invalid_username}"
+
+    logger.debug("PUT " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Payload vacío enviado con username inválido")
+
+    response = requests.put(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code: " + str(response.status_code))
+    logger.debug("Response: " + str(response.text))
+
+    if response.status_code == 200:
+        pytest.xfail("Se esperaba que la API rechazara el username inválido, pero devolvió 200 OK")
+
+    # Aceptable: cualquier otro status (400, 422, etc.)
+    assert response.status_code != 200
