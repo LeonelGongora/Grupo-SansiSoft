@@ -31,13 +31,13 @@ def generar_nombre_unico(base="deepweeb"):
 
 @pytest.mark.smoke
 @pytest.mark.functional
-def test_SCRUM_T41_Crear_un_subreddit_con_nombre_valido(get_token_fixture):
+def test_SCRUM_T41_Crear_un_subreddit_con_nombre_valido(get_token_fixture, get_user_agent):
     """Verifica que un usuario autenticado pueda crear un subreddit con un nombre válido."""
     nombre_subreddit = generar_nombre_unico()
     payload = get_create_subreddit_payload(nombre_subreddit)
     headers = {
         "Authorization": f"bearer {get_token_fixture}",
-        "User-Agent": "MiScriptQA/0.1",
+        "User-Agent": f"{get_user_agent}",
         "Content-Type": "application/x-www-form-urlencoded"
     }
     logger.info(f"Host: {BASE_URL}")
@@ -63,13 +63,13 @@ def test_SCRUM_T41_Crear_un_subreddit_con_nombre_valido(get_token_fixture):
 
 # SRB-002: Nombre ya existente — Funcional - Negativo
 @pytest.mark.negative
-def test_SCRUM_T42_crear_subreddit_existente(get_token_fixture):
+def test_SCRUM_T42_crear_subreddit_existente(get_token_fixture, get_user_agent):
     nombre = "ceniaprueba"  # Asegúrate de usar un nombre realmente existente
     payload = get_create_subreddit_payload(nombre)
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
         "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "MiScriptQA/0.1"
+        "User-Agent":  f"{get_user_agent}"
     }
     response = requests.post(URL, headers=headers, data=payload)
 
@@ -79,7 +79,7 @@ def test_SCRUM_T42_crear_subreddit_existente(get_token_fixture):
 
  #SRB-003: Token expirado — Funcional - Negativo
 @pytest.mark.negative
-def test_SCRUM_T43_token_expirado():
+def test_SCRUM_T43_token_expirado( get_user_agent):
     nombre = generate_unique_name("SubredditTokenExpirado")
     payload = get_create_subreddit_payload(nombre)
     
@@ -88,7 +88,7 @@ def test_SCRUM_T43_token_expirado():
     headers = {
         'Authorization': f'bearer {token_invalido}',
         "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "MiScriptQA/0.1"
+         "User-Agent":  f"{get_user_agent}"
     }
 
     response = requests.post(URL, headers=headers, data=payload)
@@ -98,12 +98,12 @@ def test_SCRUM_T43_token_expirado():
     print("✅ SRB-003: El sistema rechazó correctamente el token expirado.")
 
 
-def test_SCRUM_T44_sin_token():
+def test_SCRUM_T44_sin_token( get_user_agent):
     nombre = generate_unique_name("SinToken")
     payload = get_create_subreddit_payload(nombre)
     headers = {
         "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "MiScriptQA/0.1"
+        "User-Agent":  f"{get_user_agent}"
     }
     response = requests.post(URL, headers=headers, data=payload)
 
@@ -112,13 +112,13 @@ def test_SCRUM_T44_sin_token():
     print("✅ SRB-004: La API rechazó correctamente la solicitud sin token.")
 
 
-def test_SCRUM_T45_nombre_minimo(get_token_fixture):
+def test_SCRUM_T45_nombre_minimo(get_token_fixture,get_user_agent):
     nombre = generate_unique_name("abc")[:3]  # 3 caracteres: debería fallar
     payload = get_create_subreddit_payload(nombre)
     headers = {
         'Authorization': f'bearer {get_token_fixture}',
         "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "MiScriptQA/0.1"
+        "User-Agent":  f"{get_user_agent}"
     }
 
     response = requests.post(URL, headers=headers, data=payload)
