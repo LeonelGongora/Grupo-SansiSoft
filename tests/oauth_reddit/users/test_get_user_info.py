@@ -22,7 +22,7 @@ load_dotenv()
 def test_OI_001_obtener_info_usuario_existente():
 
     datos_entrada = {}
-    nombre_usuario = os.getenv('REDDIT_USERNAME_VALIDO')
+    nombre_usuario = "Ok-Low-2580"
     try:
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
@@ -41,7 +41,7 @@ def test_OI_001_obtener_info_usuario_existente():
 def test_OI_003_obtener_info_usuario_inexistente():
 
     datos_entrada = {}
-    nombre_usuario = os.getenv('REDDIT_USERNAME_INEXISTENTE')  
+    nombre_usuario = "Ok-Low-25"
     try:
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
@@ -61,7 +61,7 @@ def test_OI_003_obtener_info_usuario_inexistente():
 def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
 
     datos_entrada = {}
-    nombre_usuario = os.getenv('REDDIT_USERNAME_CARACTERES_ESPECIALES') 
+    nombre_usuario = "Ok***/*/*"
     try:
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
@@ -80,7 +80,7 @@ def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
 def test_OI_005_obtener_info_token_caducado():
 
     datos_entrada = {}
-    nombre_usuario = os.getenv('REDDIT_USERNAME_VALIDO')
+    nombre_usuario = "Ok-Low-2580"
     try:
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
@@ -94,7 +94,7 @@ def test_OI_005_obtener_info_token_caducado():
 def test_OI_006_obtener_info_token_invalido():
 
     datos_entrada = {}
-    nombre_usuario = os.getenv('REDDIT_USERNAME_VALIDO')
+    nombre_usuario = "Ok-Low-2580"
     try:
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
@@ -145,7 +145,7 @@ def test_OI_008_obtener_info_usuario_vacio():
 def test_OI_009_obtener_info_sin_cabecera_authorization():
 
     datos_entrada = {}
-    nombre_usuario = os.getenv('REDDIT_USERNAME_VALIDO')
+    nombre_usuario = "Ok-Low-2580"
     try:
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
