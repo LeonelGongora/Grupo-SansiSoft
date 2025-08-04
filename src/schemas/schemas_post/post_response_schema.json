@@ -26,7 +26,6 @@
           },
           "required": [
             "url",
-            "drafts_count",
             "id",
             "name"
           ]

@@ -8,3 +8,5 @@ test_log.log
 *.json
 .venv
 *.md
+README.md
+test_logs.log
