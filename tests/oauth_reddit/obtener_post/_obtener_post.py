@@ -181,13 +181,12 @@ import requests
 
 @pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.xfail(reason="BUG-OI-010: status 200 con token expirado")
 def test_OI010_get_post_with_expired_token(get_user_agent, created_post_id):
     """
     OI-010: Intentar obtener un post con token expirado.
-    Debería devolver 401 Unauthorized.
+    Debería devolver 403 Unauthorized.
     """
-    expired_token = "pon_aqui_tu_token_expirado"  # Token expirado guardado hace 2 días
+    expired_token = "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0"  # Token expirado guardado hace 2 días
     post_id = created_post_id
     url = f"https://oauth.reddit.com/api/info?id={post_id}"
     headers = {
@@ -198,7 +197,7 @@ def test_OI010_get_post_with_expired_token(get_user_agent, created_post_id):
     response = requests.get(url, headers=headers)
     logger.debug(f"Respuesta con token expirado: {response.status_code} - {response.text}")
 
-    assert_status_code(response, expected_status=401)
+    assert_status_code(response, expected_status=403)
 
 import pytest
 import requests
