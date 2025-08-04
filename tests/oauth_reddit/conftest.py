@@ -16,3 +16,7 @@ def get_url():
 @pytest.fixture(scope="session")
 def get_token_fixture():
     return get_token()
+
+@pytest.fixture(scope="session")
+def get_user_agent():
+    return os.getenv("REDDIT_USER_AGENT") or "MiScriptQA/0.1"

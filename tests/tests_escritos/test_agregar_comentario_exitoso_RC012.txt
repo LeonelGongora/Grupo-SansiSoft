@@ -1,0 +1,33 @@
+# ID del Test: RC012  
+# Título: crear comentario a un post ya creado
+
+# Descripción  
+Verificar que endpoint permite crear un comentario a un post ya existente en Reddit
+
+# Precondiciones  
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente.  
+- Debe de existir un post y su respectivo <thing_id>
+- El usuario tiene que estar autenticado y su token tiene que estar vigente
+
+# Ambiente  
+- URL: https://oauth.reddit.com/api/comment
+
+# Pasos  
+1. Abrir Postman.  
+2. Seleccionar el método **POST**.  
+3. Ingresar la URL: https://oauth.reddit.com/api/comment`  
+4. Enviar el cuerpo con los campos thing_id y text.
+5. Presionar el botón **Send** para enviar la solicitud.  
+6. Verificar la respuesta recibida.
+
+# Resultado esperado  
+- Código de respuesta HTTP: **200 OK**  
+- El estado de la respuesta (`response.status`) debe indicar éxito.  
+- La respuesta debe contener los datos completos del comentario creado.
+
+# Prioridad  
+Media (2)
+
+# Categoría  
+Funcional,Regresion

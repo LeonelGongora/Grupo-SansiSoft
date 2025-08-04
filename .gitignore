@@ -3,3 +3,9 @@ config.py
 report.html
 style.css
 .venv
+__pycache__/
+*.log
+/results/
+outputs/
+env/
+.gitignore
