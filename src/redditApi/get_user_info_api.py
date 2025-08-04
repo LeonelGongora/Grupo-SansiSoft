@@ -1,4 +1,5 @@
 from src.services.auth import build_headers
+from src.services.auth import build_headers_sin_authorization 
 from os import getenv
 import os
 from dotenv import load_dotenv
@@ -30,5 +31,12 @@ def obtener_informacion_con_usuario_vacio():
     payload = {}
     headers = build_headers()
     url = f"{os.getenv('BASE_URL')}user//about"
+    response = requests.get(url, headers=headers, data=payload)
+    return response
+
+def obtener_informacion_sin_token(username_objetivo):
+    payload = {}
+    headers = build_headers_sin_authorization()
+    url = f"{os.getenv('BASE_URL')}user/{username_objetivo}/about"
     response = requests.get(url, headers=headers, data=payload)
     return response

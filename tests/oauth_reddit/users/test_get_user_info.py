@@ -8,7 +8,8 @@ import jsonschema
 from src.redditApi.get_user_info_api import obtener_informacion
 from src.redditApi.get_user_info_api import obtener_informacion_con_token_caducado
 from src.redditApi.get_user_info_api import obtener_informacion_con_token_invalido 
-from src.redditApi.get_user_info_api import obtener_informacion_con_usuario_vacio
+from src.redditApi.get_user_info_api import obtener_informacion_con_usuario_vacio 
+from src.redditApi.get_user_info_api import obtener_informacion_sin_token 
 from src.schemas.get_user_info.get_user_info_exitosamente_schema import schema_user_input
 from src.schemas.get_user_info.get_user_info_exitosamente_response_schema import schema_user_info_exitosamente_respuesta
 from src.schemas.get_user_info.get_user_info_usuario_inexistente_response_schema import schema_user_inexistente           
@@ -138,3 +139,17 @@ def test_OI_008_obtener_info_usuario_vacio():
         jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
     except jsonschema.exceptions.ValidationError as err:
         pytest.fail(f"Esquema no coincide {err}")
+
+@pytest.mark.functional 
+@pytest.mark.regression   
+def test_OI_009_obtener_info_sin_cabecera_authorization():
+
+    datos_entrada = {}
+    nombre_usuario = os.getenv('REDDIT_USERNAME')
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+
+    respuesta = obtener_informacion_sin_token(nombre_usuario)
+    assert respuesta.status_code == 404

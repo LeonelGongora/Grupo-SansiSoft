@@ -64,5 +64,11 @@ def build_headers(token=None, user_agent=None):
     }
     return headers
 
+def build_headers_sin_authorization(user_agent=None):
+    user_agent = user_agent or os.getenv("REDDIT_USER_AGENT")
+    headers = {
+        "User-Agent": user_agent
+    }
+    return headers
 
 
