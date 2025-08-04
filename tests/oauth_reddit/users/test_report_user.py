@@ -118,6 +118,23 @@ def test_OI_005_reportar_usuario_token_vencido():
 
 @pytest.mark.functional
 @pytest.mark.regression 
+def test_OI_006_reportar_usuario_con_reason_superando_100_caracteres():
+
+    datos_entrada = {
+        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+        "reason": os.getenv('REDDIT_RAZON_MAS_100_CARACTERES')
+    }
+
+    try:
+        jsonschema.validate(instance=datos_entrada, schema=schema_report_user_input)
+    except jsonschema.exceptions.ValidationError as err:
+        pytest.fail(f"Esquema no coincide {err}")
+    
+    respuesta = reportar_usuario_exitosamente(datos_entrada["user"], datos_entrada["reason"])
+    assert respuesta.status_code == 400
+
+@pytest.mark.functional
+@pytest.mark.regression 
 def test_OI_007_reportar_usuario_con_carateres_especiales():
 
     datos_entrada = {
