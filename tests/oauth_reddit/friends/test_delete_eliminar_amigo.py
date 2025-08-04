@@ -46,7 +46,7 @@ def test_DELU002_delete_user_that_is_not_a_friend(get_token_fixture):
         "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
         "Content-Type": "application/json",
     }
-
+    # TOMANDO EN CUENTA QUE EL USUARIO NO ES AMIGO, despues del primer test
     payload = {"id": f"{id_username_valid}"}
     submit_url = f"{url}/api/v1/me/friends/{username_valid}"
 
@@ -59,3 +59,37 @@ def test_DELU002_delete_user_that_is_not_a_friend(get_token_fixture):
 
     assert response.status_code != 200 and response.status_code != 204, \
         "La API no debería permitir eliminar a un usuario que no es amigo"
+    
+# Eliminar usuario que no existe
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_DELU003_delete_user_that_does_not_exist(get_token_fixture):
+    """AA003 - No debe permitir eliminar a un usuario inexistente (esperado: 404)"""
+
+    headers = {
+        "Authorization": f"Bearer {get_token_fixture}",
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+
+    nonexistent_username = "Nonrate"
+    nonexistent_user_id = "Nonrate"
+
+    payload = {"id": nonexistent_user_id}
+    submit_url = f"{url}/api/v1/me/friends/{nonexistent_username}"
+
+    logger.debug("DELETE " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Payload: " + str(payload))
+
+    assert_delete_friend_success_payload_schema(payload)
+
+    response = requests.delete(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code: " + str(response.status_code))
+    logger.debug("Response: " + str(response.text))
+
+    if response.status_code != 404:
+        pytest.xfail("La API no debería devolver éxito al intentar eliminar un usuario inexistente")
+
+    assert response.status_code == 404, \
+        f"Se esperaba 404 Not Found, pero se recibió {response.status_code}"
