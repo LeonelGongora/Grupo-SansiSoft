@@ -27,3 +27,17 @@ def assert_post_created_successfully(response):
     assert "json" in response.json()
     logger.debug(response.json())
     assert response.json()["json"]["errors"] == []
+
+def assert_response_has_errors(response_json):
+    """
+    Valida que la respuesta tenga un campo 'errors' dentro de 'json' y que no esté vacío.
+    Lanza una excepción si no cumple estas condiciones.
+    """
+    assert isinstance(response_json, dict), "La respuesta no es un JSON válido"
+    assert "json" in response_json, "La respuesta no contiene el campo 'json'"
+    json_data = response_json["json"]
+
+    assert "errors" in json_data, "El campo 'json' no contiene 'errors'"
+    assert isinstance(json_data["errors"], list), "'errors' no es una lista"
+    assert len(json_data["errors"]) > 0, "La lista de errores está vacía"
+
