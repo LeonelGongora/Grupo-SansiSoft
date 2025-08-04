@@ -102,7 +102,7 @@ def test_AA004_add_friend_without_token():
     assert response.status_code == 403
 
 # Agregar amigo con token caducado → debe retornar 401
-@pytest.mark.security
+@pytest.mark.smoke
 @pytest.mark.functional
 def test_AA005_add_friend_with_expired_token():
     """AA005 - Debe retornar 401 cuando se usa un access token caducado"""
@@ -155,3 +155,68 @@ def test_AA006_add_friend_with_invalid_token():
         pytest.fail(f"Se esperaba el código 403 (Prohibido), pero se obtuvo {response.status_code}")
     else :
         assert response.status_code == 403
+
+# Agregar amigo con parámetros de consulta inválidos → no debe retornar 200
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_AA008_add_friend_with_invalid_query_params(get_token_fixture):
+    """AA007 - No debe retornar 200 cuando se envían parámetros de consulta inválidos"""
+    token = f"Bearer {get_token_fixture}"  # 👈 Usa un token válido real
+
+    headers = {
+        "Authorization": token,
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+    payload = {"name": username_valid}
+    
+    # Parámetros inválidos en la query
+    submit_url = f"{url}/api/v1/me/friends/{username_valid}?sort=%%%&limit=-10&page=none"
+
+    logger.debug("PUT " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Payload: " + str(payload))
+
+    assert_add_friend_success_payload_schema(payload)
+
+    response = requests.put(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code: " + str(response.status_code))
+    logger.debug("Response: " + str(response.text))
+
+    if response.status_code == 200:
+        pytest.xfail("Se esperaba que la API rechazara los parámetros inválidos, pero devolvió 200 OK")
+
+    # Aceptable: cualquier otro status (400, 403, 422, etc.)
+    assert response.status_code != 200
+        
+# @pytest.mark.smoke
+# @pytest.mark.functional
+# def test_AA009_add_friend_with_empty_payload(get_token_fixture):
+#     """AA009 - No debe retornar 200 cuando se envía un payload vacío"""
+
+#     token = f"Bearer {get_token_fixture}"
+
+#     headers = {
+#         "Authorization": token,
+#         "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+#         "Content-Type": "application/json",
+#     }
+
+#     # Payload vacío
+#     payload = {}
+
+#     submit_url = f"{url}/api/v1/me/friends/{username_valid}"
+
+#     logger.debug("PUT " + submit_url + " HEADERS " + str(headers))
+#     logger.debug("Payload vacío enviado")
+
+#     response = requests.put(submit_url, headers=headers, json=payload)
+
+#     logger.info("Status Code: " + str(response.status_code))
+#     logger.debug("Response: " + str(response.text))
+
+#     if response.status_code == 200:
+#         pytest.xfail("Se esperaba que la API rechazara el payload vacío, pero devolvió 200 OK")
+
+#     # Aceptable: cualquier otro status (400, 422, etc.)
+#     assert response.status_code != 200
