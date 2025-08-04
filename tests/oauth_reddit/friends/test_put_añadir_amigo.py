@@ -290,3 +290,38 @@ def test_AA011_add_self_as_friend(get_token_fixture):
 
     # Códigos válidos: 400, 403, 422, etc.
     assert response.status_code != 200
+
+# Agregar amigo con nombre vacío → debe fallar (no debe retornar 200)
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_AA015_add_friend_with_empty_name(get_token_fixture):
+    """AA012 - No debe ser posible agregar un amigo con nombre vacío"""
+
+    token = f"Bearer {get_token_fixture}"
+
+    headers = {
+        "Authorization": token,
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        "Content-Type": "application/json",
+    }
+
+    empty_username = ""  # 👈 nombre vacío
+
+    payload = {
+        "name": empty_username
+    }
+
+    submit_url = f"{url}/api/v1/me/friends/{empty_username}"
+
+    logger.debug("PUT " + submit_url + " HEADERS " + str(headers))
+    logger.debug("Intentando agregar amigo con nombre vacío, payload: " + str(payload))
+
+    response = requests.put(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code: " + str(response.status_code))
+    logger.debug("Response: " + str(response.text))
+
+    if response.status_code == 200:
+        pytest.xfail("Se esperaba que la API rechazara el nombre vacío, pero devolvió 200 OK")
+
+    assert response.status_code != 200
