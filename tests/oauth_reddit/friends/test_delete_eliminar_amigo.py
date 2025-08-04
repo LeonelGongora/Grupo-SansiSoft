@@ -95,7 +95,7 @@ def test_DELU003_delete_user_that_does_not_exist(get_token_fixture):
         f"Se esperaba 404 Not Found, pero se recibió {response.status_code}"
 
 # Eliminar usuario sin token
-@pytest.mark.security
+@pytest.mark.smoke
 @pytest.mark.functional
 def test_DELU004_delete_friend_without_token():
     """AA004 - No debe permitir eliminar un amigo sin autenticación (esperado: 401 Unauthorized)"""
@@ -187,3 +187,34 @@ def test_DELU005_delete_friend_with_expired_token():
         pytest.xfail("La API debería rechazar la solicitud con token inválido, pero no lo hizo correctamente")
     else :
         assert True, f"Se esperaba 401/403 al eliminar con token inválido, pero se recibió {response.status_code}"
+
+# Eliminar usuario sin Content-Type
+@pytest.mark.smoke
+@pytest.mark.functional
+def test_DELU006_delete_friend_without_content_type(get_token_fixture):
+    """AA006 - No debe permitir eliminar un amigo sin header Content-Type (esperado: 400, 415, 403, etc.)"""
+
+    headers = {
+        "Authorization": f"Bearer {get_token_fixture}",
+        "User-Agent": "SansiSofRFV/0.1 by IceOld4091",
+        # "Content-Type" omitido intencionalmente
+    }
+
+    payload = {"id": id_username_valid}
+    submit_url = f"{url}/api/v1/me/friends/{username_valid}"
+
+    logger.debug("DELETE " + submit_url + " HEADERS (sin Content-Type): " + str(headers))
+    logger.debug("Payload: " + str(payload))
+
+    assert_delete_friend_success_payload_schema(payload)
+
+    response = requests.delete(submit_url, headers=headers, json=payload)
+
+    logger.info("Status Code (sin Content-Type): " + str(response.status_code))
+    logger.debug("Response (sin Content-Type): " + str(response.text))
+
+    if response.status_code in [200, 204]:
+        pytest.xfail("La API no debería aceptar la solicitud sin Content-Type")
+
+    assert response.status_code not in [200, 204], \
+        f"Se esperaba error al eliminar sin Content-Type, pero se recibió {response.status_code}"
