@@ -11,7 +11,7 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
 ## Tipos de Pruebas Incluidas
 
 - **Exploratorias**:
-  - Colecciones de pruebas disponibles en el archivo [`colecciones_postman.json`](./colecciones_postman.json).
+  - Colecciones de pruebas disponibles en el archivo `colecciones_postman.json`.
 - **Smoke Tests**:
 - Validan que los endpoints más importantes estén funcionando correctamente.
 - **Pruebas Funcionales**:
@@ -54,9 +54,26 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
 1. Clona el repositorio:
    ```bash
    git clone --branch development https://github.com/LeonelGongora/Grupo-SansiSoft.git
+   ```
    
-2. Ejecuta las pruebas de Pytest:
+2.Crear entorno virtual
+   ```bash
+   python -m venv .venv
+   ```
+
+3. Acceder al entorno virtual
+   ```bash
+   .\.venv\Scripts\Activate.ps1
+   ```
+   
+4. Instalar los modulos requeridos con requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+5. Ejecuta las pruebas de Pytest:
    ```bash
    pytest
+    ```
     
     
