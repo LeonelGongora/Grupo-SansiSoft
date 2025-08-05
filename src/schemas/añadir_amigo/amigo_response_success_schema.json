@@ -5,7 +5,9 @@
     "date": {
       "type": "number"
     },
-    
+    "rel_id": {
+      "type": "string"
+    },
     "name": {
       "type": "string"
     },
@@ -15,6 +17,7 @@
   },
   "required": [
     "date",
+    "rel_id",
     "name",
     "id"
   ],

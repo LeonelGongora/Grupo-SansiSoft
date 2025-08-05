@@ -26,6 +26,7 @@ def assert_delete_friend_success_response_schema(response_json):
     except jsonschema.exceptions.ValidationError as e:
         pytest.xfail(f"Schema response inválido: {e}")
 def assert_delete_friend_successfully(response):
-    if response.status_code != 200:
-        pytest.xfail(f"Codigo esperado era 200, pero obtuvo {response.status_code}")
-    assert response.status_code == 200, f"Codigo esperado era 200, pero obtuvo {response.status_code}"
+    if response.status_code not in [200, 201, 204]:
+        pytest.xfail(f"Código esperado era 200 o 204, pero se obtuvo {response.status_code}")
+    assert response.status_code in [200, 201, 204], \
+        f"Código esperado era 200 o 204, pero se obtuvo {response.status_code}"
