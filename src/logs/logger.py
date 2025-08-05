@@ -1,17 +1,21 @@
 # src/logs/logger.py
 import logging
 
-# Configurar el logger
+# Crear y configurar el logger
 logger = logging.getLogger("reddit_tests")
-logger.setLevel(logging.DEBUG)  # Cambia a INFO o WARNING si no quieres tanto detalle
+logger.setLevel(logging.DEBUG)
 
-# Crear un handler para escribir en archivo
-file_handler = logging.FileHandler("test_logs.log", mode='w')  # modo 'w' para sobrescribir en cada run
-file_handler.setLevel(logging.DEBUG)
-
-# Crear un formato de log
+# Formato de los logs
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
 
-# Agregar el handler al logger
+# Handler para archivo
+file_handler = logging.FileHandler("test_logs.log", mode='w')
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
+
+# (Opcional) Handler para consola
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+console_handler.setFormatter(formatter)
+logger.addHandler(console_handler)
