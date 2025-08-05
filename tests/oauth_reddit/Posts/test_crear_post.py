@@ -28,7 +28,6 @@ def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
         title='Hola buenas tardes',
         text='Saben cuanto pesa un camello?',
     )
-
     headers = get_create_post_headers(
         token=get_token_fixture,
         user_agent=get_user_agent,
@@ -262,4 +261,3 @@ def test_CP011_schema_payload_sin_campos_requeridos(get_token_fixture, get_user_
 
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     logger.debug(f"Respuesta de Reddit con payload inválido: {response.status_code} {response.text}")
-

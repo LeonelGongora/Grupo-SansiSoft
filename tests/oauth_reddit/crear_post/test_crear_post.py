@@ -9,6 +9,7 @@ from src.payloads.payload_crear_post import get_create_post_payload
 @pytest.mark.smoke
 @pytest.mark.functional
 @pytest.mark.regression
+@pytest.mark.ejecutar
 def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
     """Descripción: Crea un post exitoso validando status 200 y la estructura del payload y respuesta."""
     url = "https://oauth.reddit.com"
