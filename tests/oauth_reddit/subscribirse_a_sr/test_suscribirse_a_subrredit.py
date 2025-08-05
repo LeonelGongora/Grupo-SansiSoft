@@ -1,11 +1,9 @@
 import os
 import requests
 import pytest
-import logging
 from src.assertions.post_suscribirse_assertions import assert_post_created_successfully, assert_payload_matches_schema,assert_subscribe_success_empty_response,assert_response_forbidden,assert_response_not_found,assert_response_unauthorized,assert_response_bad_request,assert_payloadsinaction_matches_schema,assert_response_conflict,assert_response_too_many_requests
+from src.logs.logger import logger
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 get_url = "https://oauth.reddit.com"
 endpoint = "/api/subscribe"
 url = get_url + endpoint
