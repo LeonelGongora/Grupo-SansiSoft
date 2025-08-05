@@ -7,10 +7,9 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     filename=log_path,
-    filemode="a"  # Usa "w" si quieres sobrescribir en cada ejecución
+    filemode="a" 
 )
 
-# Opcional: muestra también en consola
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
