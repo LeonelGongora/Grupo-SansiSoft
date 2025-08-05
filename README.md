@@ -50,3 +50,8 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
 ---
 
 ## Cómo Ejecutar las Pruebas
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/usuario/tu-repositorio.git
+   cd tu-repositorio
