@@ -172,6 +172,7 @@ def test_OI008_get_post_id_uppercase(get_token_fixture, created_post_id, get_use
 
 @pytest.mark.functional
 @pytest.mark.regression
+@pytest.mark.ejecutar
 def test_OI007_get_post_with_duplicate_query_params(get_token_fixture, created_post_id, get_user_agent):
     """
     OI-007: Obtener información de un post enviando dos veces el mismo query param.
