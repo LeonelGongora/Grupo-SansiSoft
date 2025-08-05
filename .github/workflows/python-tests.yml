@@ -7,12 +7,6 @@ on:
   pull_request:
     branches:
       - development
-  workflow_dispatch:
-    inputs:
-      test_mark:
-        description: 'Test marker (e.g. functional, smoke)'
-        required: false
-        default: 'all'
 
 jobs:
   run-tests:
@@ -42,14 +36,8 @@ jobs:
 
       - name: Run tests and generate HTML report
         run: |
-          MARK="${{ github.event.inputs.test_mark || 'all' }}"
-          if [ "$MARK" = "all" ]; then
             pytest -v --maxfail=2 --disable-warnings \
-              --html=report.html --self-contained-html --capture=tee-sys || true
-          else
-            pytest -v -m "$MARK" --maxfail=2 --disable-warnings \
-              --html=report.html --self-contained-html --capture=tee-sys || true
-          fi
+            --html=report.html --self-contained-html --capture=tee-sys || true
 
       - name: Upload HTML test report
         uses: actions/upload-artifact@v4
