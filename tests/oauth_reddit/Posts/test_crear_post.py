@@ -28,7 +28,6 @@ def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
         title='Hola buenas tardes',
         text='Saben cuanto pesa un camello?',
     )
-
     headers = get_create_post_headers(
         token=get_token_fixture,
         user_agent=get_user_agent,
@@ -45,7 +44,6 @@ def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
     response_json = response.json()
 
     logger.info(f"Status code: {response.status_code}")
-
     logger.debug(f"Response JSON: {response_json}")
 
     # Validaciones
@@ -70,15 +68,18 @@ def test_CP003_create_post_en_subreddit_inexistente(get_token_fixture, get_user_
         title='Intentando postear en un subreddit inexistente',
         text='Este contenido no debería ser aceptado',
     )
-
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
+    logger.debug(f"Request payload: {payload}")
     assert_payload_matches_schema(payload)
 
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     response_json = response.json()
-    logger.debug(f"Respuesta JSON al intentar postear en subreddit inexistente: {response_json}")
     # Validaciones esperadas para error
     assert_status_code(response, expected_status=200)
     assert_response_has_errors(response_json)
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Respuesta JSON al intentar postear en subreddit inexistente: {response_json}")
 
 @pytest.mark.functional
 @pytest.mark.regression
@@ -98,11 +99,13 @@ def test_CP004_create_post_sin_titulo(get_token_fixture, get_user_agent):
         title="",                        # Título vacío
         text="Contenido sin título"
     )
-
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
+    logger.debug(f"Request payload: {payload}")
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON al postear sin título: {response_json}")
-
     assert_status_code(response, expected_status=200)
     assert_response_has_errors(response_json)
 
@@ -125,7 +128,8 @@ def test_CP008_create_post_sin_api_type(get_token_fixture, get_user_agent):
         title="Post sin api_type",
         text="Este post no debería procesarse correctamente"
     )
-
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
     # Eliminamos el campo api_type
     payload.pop("api_type", None)
     logger.debug(f"Payload sin api_type: {payload}")
@@ -135,13 +139,14 @@ def test_CP008_create_post_sin_api_type(get_token_fixture, get_user_agent):
         logger.warning(f"Falla del esquema (esperado): {e}")
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON al postear sin api_type: {response_json}")
-
     assert_status_code(response, expected_status=200)
     assert_response_has_errors(response_json)
 
 @pytest.mark.functional
 @pytest.mark.regression
+@pytest.mark.ejecutar
 @pytest.mark.xfail(reason="BUG-CP009: El servidor deberia aceptar un payload sin 'kind' reportando el error, pero da error 500 internal server error")
 def test_CP009_create_post_sin_kind(get_token_fixture, get_user_agent):
     """
@@ -160,14 +165,15 @@ def test_CP009_create_post_sin_kind(get_token_fixture, get_user_agent):
         title="Post sin kind",
         text="Contenido no válido"
     )
-
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
     # Eliminamos el campo 'kind' para simular el error
     payload.pop("kind", None)
     logger.debug(f"Payload sin kind: {payload}")
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON al postear sin kind: {response_json}")
-
     # Aunque el status sea 200, esperamos que haya errores reportados en la respuesta
     assert_status_code(response, expected_status=200)
     assert_response_has_errors(response_json)
@@ -191,14 +197,15 @@ def test_CP010_create_post_sin_sr(get_token_fixture, get_user_agent):
         title="Post sin sr",
         text="Contenido sin subreddit"
     )
-
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
     # Eliminamos el campo 'sr' para simular la omisión del subreddit
     payload.pop("sr", None)
     logger.debug(f"Payload sin subreddit: {payload}")
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON al postear sin subreddit: {response_json}")
-
     # Aunque la API devuelva 200, debe incluir errores en la respuesta
     assert_status_code(response, expected_status=200)
     assert_response_has_errors(response_json)
@@ -221,12 +228,14 @@ def test_CP002_create_post_tipo_link_solo_titulo(get_token_fixture, get_user_age
         subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
         title='En esta ocasión solo el título',
     )
-
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
     assert_payload_matches_schema(payload)
     payload.pop("text", None)
     logger.debug(f"Payload para post tipo link solo con título: {payload}")
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON al crear post tipo link solo con título: {response_json}")
     # Validaciones
     assert_post_created_successfully(response)
@@ -248,6 +257,8 @@ def test_CP011_schema_payload_sin_campos_requeridos(get_token_fixture, get_user_
     payload.pop("title", None)
     payload.pop("kind", None)
 
+    logger.info(f"domain: {url}/api/submit")
+    logger.debug(f"Request headers: {headers}")
     logger.debug(f"Payload sin campos requeridos: {payload}") 
 
     # Verificamos schema sin requirements
@@ -259,7 +270,7 @@ def test_CP011_schema_payload_sin_campos_requeridos(get_token_fixture, get_user_
         user_agent=get_user_agent,
         content_type="application/x-www-form-urlencoded"
     )
-
     response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
-    logger.debug(f"Respuesta de Reddit con payload inválido: {response.status_code} {response.text}")
 
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Respuesta de Reddit con payload inválido: {response.json()}")
