@@ -10,3 +10,5 @@ test_log.log
 *.md
 README.md
 test_logs.log
+# Ignorar archivos compilados de Python
+__pycache__/

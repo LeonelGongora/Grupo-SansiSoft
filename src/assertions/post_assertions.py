@@ -36,6 +36,7 @@ def assert_post_created_successfully(response):
     assert response.status_code == 200, f"Expected 200 but got {response.status_code}"
     assert "json" in response.json()
     logger.debug(response.json())
+    logger.info(f"Validando que la respuesta contenga 'json': {response.json()}")
     assert response.json()["json"]["errors"] == []
 
 def assert_response_has_errors(response_json):

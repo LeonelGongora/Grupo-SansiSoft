@@ -39,3 +39,25 @@ def comentar_en_post_token_caducado(thing_id, text):
     response = requests.post(url, headers=headers, data=payload)
     return response
     
+
+def obtener_comentarios(thing_id):
+    """ Obtiene los comentarios de un post de Reddit.
+        thing_id: ID del post del que se quieren obtener los comentarios
+    """
+    headers = build_headers()
+    params = { "id":f't1_{thing_id}' }
+    url = f"{getenv('BASE_URL')}api/info"
+    response = requests.get(url, headers=headers,params=params)
+    return response
+
+
+def obtener_comentario_token_sin_token(thing_id):
+    """ Obtiene un comentario de Reddit con un token inválido.
+        thing_id: ID del comentario que se quiere obtener
+    """
+    headers = build_headers(token=None)
+    params = { "id":f't1_{thing_id}' }
+    url = f"{getenv('BASE_URL')}api/info"
+    response = requests.get(url, headers=headers,params=params)
+    return response
+
