@@ -39,8 +39,6 @@ def assert_subreddit_created_successfully(response):
     assert response.status_code == 200, f"Esperado 200, recibido {response.status_code}"
     json_body = response.json()
 
-
-
 def assert_subreddit_creation_failed(response, expected_error=None):
     """
     Verifica que la creación de un subreddit falló correctamente, y que los errores esperados estén presentes.
