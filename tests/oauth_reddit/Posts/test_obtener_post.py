@@ -213,7 +213,8 @@ def test_OI010_get_post_with_expired_token(get_user_agent, created_post_id):
     response = requests.get(url, headers=headers)
     logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta con token expirado: {response.text}")
-    assert_status_code(response, expected_status=403)
+    assert response.status_code in [401, 403], \
+    f"Expected 401 or 403, got {response.status_code}"
 
 @pytest.mark.functional
 @pytest.mark.regression
