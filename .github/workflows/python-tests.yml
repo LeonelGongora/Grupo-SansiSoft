@@ -40,12 +40,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
+      - name: Run tests and generate HTML report
         run: |
-            MARK="${{ github.event.inputs.test_mark || 'all' }}"
-            if [ "$MARK" = "all" ]; then
-            pytest -v --maxfail=2 --disable-warnings || true
-            else
-            pytest -v -m "$MARK" --maxfail=2 --disable-warnings || true
-            fi
+          MARK="${{ github.event.inputs.test_mark || 'all' }}"
+          if [ "$MARK" = "all" ]; then
+            pytest -v --maxfail=2 --disable-warnings \
+              --html=report.html --self-contained-html --capture=tee-sys || true
+          else
+            pytest -v -m "$MARK" --maxfail=2 --disable-warnings \
+              --html=report.html --self-contained-html --capture=tee-sys || true
+          fi
+
+      - name: Upload HTML test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-html-report
+          path: report.html
 
