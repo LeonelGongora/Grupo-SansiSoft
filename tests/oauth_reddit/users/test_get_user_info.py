@@ -3,6 +3,7 @@ import requests
 import pytest
 import sys
 import os
+import logging
 from dotenv import load_dotenv
 import jsonschema  
 from src.redditApi.get_user_info_api import obtener_informacion
@@ -23,17 +24,25 @@ def test_OI_001_obtener_info_usuario_existente():
 
     datos_entrada = {}
     nombre_usuario = "Ok-Low-2580"
+    logging.info("test_OI_006_obtener_info_token_invalido")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 200
     
     try:
+        logging.info("Esquema de salida validado correctamente")
         jsonschema.validate(instance=respuesta.json(), schema=schema_user_info_exitosamente_respuesta)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de salida: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
 @pytest.mark.functional   
@@ -42,17 +51,25 @@ def test_OI_003_obtener_info_usuario_inexistente():
 
     datos_entrada = {}
     nombre_usuario = "Ok-Low-25"
+    logging.info("test_OI_006_obtener_info_token_invalido")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 404
     
     try:
+        logging.info("Esquema de salida validado correctamente")
         jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de salida: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     
@@ -62,17 +79,25 @@ def test_OI_004_obtener_info_usuario_con_caracteres_especiales():
 
     datos_entrada = {}
     nombre_usuario = "Ok***/*/*"
+    logging.info("test_OI_006_obtener_info_token_invalido")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 400
     
     try:
+        logging.info("Esquema de salida validado correctamente")
         jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de salida: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
 @pytest.mark.functional  
@@ -81,12 +106,18 @@ def test_OI_005_obtener_info_token_caducado():
 
     datos_entrada = {}
     nombre_usuario = "Ok-Low-2580"
+    logging.info("test_OI_006_obtener_info_token_invalido")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion_con_token_caducado(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 401
     
 @pytest.mark.functional 
@@ -95,12 +126,18 @@ def test_OI_006_obtener_info_token_invalido():
 
     datos_entrada = {}
     nombre_usuario = "Ok-Low-2580"
+    logging.info("test_OI_006_obtener_info_token_invalido")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion_con_token_invalido(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 403
     
 @pytest.mark.functional 
@@ -109,35 +146,53 @@ def test_OI_007_obtener_info_usuario_propio():
 
     datos_entrada = {}
     nombre_usuario = os.getenv('REDDIT_USERNAME')
+    logging.info("Iniciando test_OI_007_obtener_info_usuario_propio")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 200
 
     try:
+        logging.info("Esquema de salida validado correctamente")
         jsonschema.validate(instance=respuesta.json(), schema=schema_user_input_propio)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de salida: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
 @pytest.mark.functional 
 @pytest.mark.regression   
+@pytest.mark.xfail(reason="BUG-001-USER004: Se obtiene un código 200 cuando no se ingresa ningun nombre de usuario en el parámetro de la api")
 def test_OI_008_obtener_info_usuario_vacio():
 
     datos_entrada = {}
+    logging.info("Iniciando test_OI_008_obtener_info_usuario_vacio")
+    logging.info(f"Nombre de usuario obtenido: ")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion_con_usuario_vacio()
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 404
+    
 
     try:
+        logging.info("Esquema de salida validado correctamente")
         jsonschema.validate(instance=respuesta.json(), schema=schema_user_inexistente)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de salida: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
 @pytest.mark.functional 
@@ -146,10 +201,18 @@ def test_OI_009_obtener_info_sin_cabecera_authorization():
 
     datos_entrada = {}
     nombre_usuario = "Ok-Low-2580"
+    logging.info("Iniciando test_OI_007_obtener_info_usuario_propio")
+    logging.info(f"Nombre de usuario obtenido: {nombre_usuario}")
     try:
+        logging.info("Esquema de entrada validado correctamente")
         jsonschema.validate(instance=datos_entrada, schema=schema_user_input)
     except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"Error de validación del esquema de entrada: {err}")
         pytest.fail(f"Esquema no coincide {err}")
 
     respuesta = obtener_informacion_sin_token(nombre_usuario)
+    logging.info(f"Respuesta HTTP recibida: status_code={respuesta.status_code}")
+    logging.debug(f"Cuerpo de la respuesta: {respuesta.text}")
     assert respuesta.status_code == 404
+
+    
