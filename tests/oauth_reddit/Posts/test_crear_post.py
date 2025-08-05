@@ -8,7 +8,8 @@ from src.assertions.post_assertions import (
     assert_post_response_schema, 
     assert_post_created_successfully, 
     assert_payload_matches_schema,
-    assert_response_has_errors
+    assert_response_has_errors,
+    assert_payload_sin_required_matches_schema
 )
 from src.payloads.payload_crear_post import get_create_post_payload
 from src.redditApi.headers_post import get_create_post_headers
@@ -18,28 +19,36 @@ from src.assertions.get_post_assertions import assert_status_code
 @pytest.mark.functional
 @pytest.mark.regression
 def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
-    """Descripción: Crea un post exitoso validando status 200 y la estructura del payload y respuesta."""
+    """CP-001: Crea un post exitoso validando status 200, payload y estructura de respuesta."""
     url = "https://oauth.reddit.com"
+    submit_url = f"{url}/api/submit"
+
+    payload = get_create_post_payload(
+        subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
+        title='Hola buenas tardes',
+        text='Saben cuanto pesa un camello?',
+    )
+
     headers = get_create_post_headers(
         token=get_token_fixture,
         user_agent=get_user_agent,
         content_type="application/x-www-form-urlencoded"
     )
-    payload = get_create_post_payload(
-        subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
-        title='Buenas, que opinan de este post?',
-        text='No leo los comentarios, pero me gusta verlos',
-    )
+    logger.info(f"IP or domain: {submit_url}")
+    logger.debug(f"Request headers: {headers}")
+    logger.debug(f"Request payload: {payload}")
 
-      # Validación del payload antes de enviar 
+    # Validación del esquema del payload
     assert_payload_matches_schema(payload)
-
-    submit_url = f"{url}/api/submit"
 
     response = requests.post(submit_url, headers=headers, data=payload)
     response_json = response.json()
-    logger.debug(f"Respuesta JSON al crear post exitoso: {response_json}")
-    # Assertions
+
+    logger.info(f"Status code: {response.status_code}")
+
+    logger.debug(f"Response JSON: {response_json}")
+
+    # Validaciones
     assert_post_created_successfully(response)
     assert_post_response_schema(response_json)
 
@@ -222,3 +231,35 @@ def test_CP002_create_post_tipo_link_solo_titulo(get_token_fixture, get_user_age
     # Validaciones
     assert_post_created_successfully(response)
     assert_post_response_schema(response_json)
+
+@pytest.mark.functional
+def test_CP011_schema_payload_sin_campos_requeridos(get_token_fixture, get_user_agent):
+    """
+    CP-011: Verificar el schema del payload al crear post sin campos requeridos (title, kind, sr).
+    Se espera que la función assert_payload_matches_schema detecte la falta de campos obligatorios.
+    """
+    # Preparamos payload completo y luego lo modificamos
+    payload = get_create_post_payload(
+        subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
+        title="Post inválido"
+    )
+    # Quitamos campos requeridos
+    payload.pop("sr", None)
+    payload.pop("title", None)
+    payload.pop("kind", None)
+
+    logger.debug(f"Payload sin campos requeridos: {payload}") 
+
+    # Verificamos schema sin requirements
+    assert_payload_sin_required_matches_schema(payload)  
+    
+    url = "https://oauth.reddit.com"
+    headers = get_create_post_headers(
+        token=get_token_fixture,
+        user_agent=get_user_agent,
+        content_type="application/x-www-form-urlencoded"
+    )
+
+    response = requests.post(f"{url}/api/submit", headers=headers, data=payload)
+    logger.debug(f"Respuesta de Reddit con payload inválido: {response.status_code} {response.text}")
+
