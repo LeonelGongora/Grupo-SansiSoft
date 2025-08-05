@@ -2,10 +2,11 @@ config.py
 .env
 report.html
 style.css
-.venv
 __pycache__/
-*.log
-/results/
-outputs/
-env/
-.gitignore
+*.py[cod]
+test_log.log
+*.json
+.venv
+*.md
+README.md
+test_logs.log
