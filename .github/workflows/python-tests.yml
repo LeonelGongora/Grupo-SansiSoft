@@ -23,6 +23,7 @@ jobs:
       REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
       REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
       REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+      REDDIT_ACCESS_TOKEN_CADUCADO: ${{ secrets.REDDIT_ACCESS_TOKEN_CADUCADO }}
       BASE_URL: ${{ secrets.BASE_URL }}
 
     steps:
