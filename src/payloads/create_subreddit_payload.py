@@ -1,4 +1,4 @@
-def get_create_subreddit_payload(name, description="Este es un subreddit de prueba", subreddit_type="public"):
+def get_create_subreddit_payload(name, description="Este es un subreddit de prueba", subreddit_type="public", lang="en"):
     return {
         "name": name,
         "title": name,
@@ -6,7 +6,7 @@ def get_create_subreddit_payload(name, description="Este es un subreddit de prue
         "description": description,
         "sr": name,
         "type": subreddit_type,
-        "lang": "es",
+        "lang": lang,
         "link_type": "any",
         "submit_text": "Bienvenido a este subreddit",
         "wiki_edit_age": 0,
