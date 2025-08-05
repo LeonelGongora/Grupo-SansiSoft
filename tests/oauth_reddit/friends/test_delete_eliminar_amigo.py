@@ -200,7 +200,7 @@ def test_DELU006_delete_friend_with_spaces_in_username(
     invalid_username = "user name"
     # URL encode it
     headers = build_headers(token=get_token_fixture, user_agent=get_user_agent)
-    payload = crear_payload_eliminar_amigo(id=invalid_username)
+    payload = crear_payload_eliminar_amigo(id=id_username_valid)
     submit_url = f"{url}/api/v1/me/friends/{invalid_username}"
 
     logger.debug(f"DELETE {submit_url} HEADERS: {headers}")
@@ -232,7 +232,7 @@ def test_DELU007_delete_friend_with_numeric_username(get_token_fixture, get_user
     numeric_username = "12345"
    
     headers = build_headers(token=get_token_fixture, user_agent=get_user_agent)
-    payload = crear_payload_eliminar_amigo(id=numeric_username)
+    payload = crear_payload_eliminar_amigo(id=id_username_valid)
     submit_url = f"{url}/api/v1/me/friends/{numeric_username}"
 
     logger.debug(f"DELETE {submit_url} HEADERS: {headers}")
