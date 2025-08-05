@@ -2,13 +2,11 @@ config.py
 .env
 report.html
 style.css
-__pycache__/
+.pytest_cache/
+.python-version
 *.py[cod]
 test_log.log
-*.json
 .venv
 *.md
 README.md
-test_logs.log
-# Ignorar archivos compilados de Python
 __pycache__/
