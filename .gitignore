@@ -10,3 +10,4 @@ test_log.log
 *.md
 README.md
 __pycache__/
+test_logs.log

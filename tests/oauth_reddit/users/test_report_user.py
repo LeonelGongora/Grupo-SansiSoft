@@ -97,7 +97,6 @@ def test_REPU_003_reportar_usuario_con_token_invalido():
     assert respuesta.status_code == 403
 
 @pytest.mark.functional
-@pytest.mark.regression 
 def test_REPU_004_reportar_usuario_sin_token():
     logger.info("Iniciando test_REPU_004_reportar_usuario_sin_token")
     datos_entrada = {
@@ -125,7 +124,6 @@ def test_REPU_004_reportar_usuario_sin_token():
         pytest.fail(f"Esquema no coincide {err}")
 
 @pytest.mark.functional
-@pytest.mark.regression 
 def test_REPU_005_reportar_usuario_token_vencido():
     logger.info("Iniciando test_REPU_005_reportar_usuario_token_vencido")
     datos_entrada = {

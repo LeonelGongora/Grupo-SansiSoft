@@ -13,8 +13,8 @@ def get_token_fixture():
 def created_post_id():
     return create_post(
     token=get_token(),
-    title='Hola amigos, como estan hoy?',
-    text="Escribanlo en los comentarios",
+    title='A alguien no le tratan bien en su casa',
+    text="Traten bonito a esta publicacion",
     user_agent=os.getenv("REDDIT_USER_AGENT")
     )
 

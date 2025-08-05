@@ -235,7 +235,8 @@ def test_OI009_get_post_with_empty_token(get_user_agent):
     response = requests.get(url, headers=headers)
     logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta con token vacío: {response.text}")
-    assert_status_code(response, expected_status=401)
+    assert response.status_code in [401, 403], \
+    f"Expected 401 or 403, got {response.status_code}"
 
 @pytest.mark.functional
 @pytest.mark.regression

@@ -15,9 +15,7 @@ from src.payloads.payload_crear_post import get_create_post_payload
 from src.redditApi.headers_post import get_create_post_headers
 from src.assertions.get_post_assertions import assert_status_code
 
-@pytest.mark.smoke
-@pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.ejecutar #corresponde a smoke, funcional y regression
 def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
     """CP-001: Crea un post exitoso validando status 200, payload y estructura de respuesta."""
     url = "https://oauth.reddit.com"
@@ -25,8 +23,8 @@ def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
 
     payload = get_create_post_payload(
         subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
-        title='Hola buenas tardes',
-        text='Saben cuanto pesa un camello?',
+        title='Quien sabe si el cielo es azul?',
+        text='O es que es un mito?',
     )
     headers = get_create_post_headers(
         token=get_token_fixture,
@@ -209,9 +207,8 @@ def test_CP010_create_post_sin_sr(get_token_fixture, get_user_agent):
     assert_status_code(response, expected_status=200)
     assert_response_has_errors(response_json)
 
-@pytest.mark.smoke
-@pytest.mark.functional
-@pytest.mark.regression
+
+@pytest.mark.ejecutar #corresponde a smoke, funcional y regression
 def test_CP002_create_post_tipo_link_solo_titulo(get_token_fixture, get_user_agent):
     """
     CP-002: Crear post de tipo link solo con título.
@@ -225,7 +222,7 @@ def test_CP002_create_post_tipo_link_solo_titulo(get_token_fixture, get_user_age
     )
     payload = get_create_post_payload(
         subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
-        title='En esta ocasión solo el título',
+        title='Alguien tiene un link interesante?',
     )
     logger.info(f"domain: {url}/api/submit")
     logger.debug(f"Request headers: {headers}")
