@@ -1,0 +1,28 @@
+ID del Test: SCRUM_T43
+Título: Crear subreddit con token expirado (negativo)
+
+Descripción
+- Verificar que al usar un token expirado, la API rechaza la solicitud con código 401 y mensaje adecuado.
+
+Precondiciones
+- Token inválido o expirado.
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST con token expirado.
+2. Verificar código 401 y mensaje de error por token inválido.
+
+Resultado esperado
+- Código HTTP 401 Unauthorized.
+- Mensaje que indique token inválido o expirado.
+
+Prioridad
+- Alta (1)
+
+Categoría
+- Funcional, Negativo

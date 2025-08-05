@@ -1,0 +1,28 @@
+ID del Test: SCRUM_T57
+Título: Crear subreddit con descripción vacía (espacios)
+
+Descripción
+- Verificar comportamiento al crear subreddit con descripción que contiene solo espacios.
+
+Precondiciones
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST con descripción vacía (espacios).
+2. Verificar si se acepta o rechaza la solicitud.
+3. Validar respuesta acorde.
+
+Resultado esperado
+- Puede ser exitoso (200) o rechazado (400/422) dependiendo del backend.
+- Validar esquema o mensaje de error según el caso.
+
+Prioridad
+- Media (2)
+
+Categoría
+- Funcional, Negativo
