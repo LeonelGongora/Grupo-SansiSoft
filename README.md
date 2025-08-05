@@ -70,3 +70,8 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
    ```bash
    pip install -r requirements.txt
    ```
+
+5. Ejecuta las pruebas de Pytest en la raiz del proyecto :
+   ```bash
+   pytest
+    ```
