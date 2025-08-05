@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 from src.payloads.comment_payload import crear_payload_comentario
 import requests
-
+from src.logs.logger import logger
 load_dotenv()
 
 def comentar_en_post(thing_id, text):
@@ -47,6 +47,9 @@ def obtener_comentarios(thing_id):
     headers = build_headers()
     params = { "id":f't1_{thing_id}' }
     url = f"{getenv('BASE_URL')}api/info"
+    logger.info(f"IP or domain: {url}")
+    logger.debug(f"Request headers: {headers}")
+    logger.debug(f"Request params: {params}")
     response = requests.get(url, headers=headers,params=params)
     return response
 
