@@ -23,6 +23,7 @@ def getSubmitUrl(username):
 # Eliminar amigo existente
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.regression
 def test_DELU001_delete_friend_with_username_valid(get_token_fixture, get_user_agent):
     """DELU001 - eliminar amigo con username valid"""
     headers = build_headers(token=get_token_fixture, user_agent=get_user_agent)
@@ -40,7 +41,7 @@ def test_DELU001_delete_friend_with_username_valid(get_token_fixture, get_user_a
 
 
 # Eliminar usuario que no es amigo
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_DELU002_delete_user_that_is_not_a_friend(get_token_fixture, get_user_agent):
     """DELU002 - No debe permitir eliminar a un usuario que no es nuestro amigo"""
@@ -63,7 +64,7 @@ def test_DELU002_delete_user_that_is_not_a_friend(get_token_fixture, get_user_ag
 
 
 # Eliminar usuario que no existe
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_DELU003_delete_user_that_does_not_exist(get_token_fixture, get_user_agent):
     """DELU003 - No debe permitir eliminar a un usuario inexistente (esperado: 404)"""
@@ -94,7 +95,7 @@ def test_DELU003_delete_user_that_does_not_exist(get_token_fixture, get_user_age
 
 
 # Eliminar usuario sin token
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_DELU004_delete_friend_without_token(get_user_agent):
     """DELU004 - No debe permitir eliminar un amigo sin autenticación (esperado: 401 Unauthorized)"""
@@ -127,7 +128,7 @@ def test_DELU004_delete_friend_without_token(get_user_agent):
 
 
 # Eliminar usuario con token inválido
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_DELU005_delete_friend_with_invalid_token(get_user_agent):
     """DELU005 - No debe permitir eliminar un amigo con token inválido (esperado: 401 o 403)"""
@@ -157,7 +158,7 @@ def test_DELU005_delete_friend_with_invalid_token(get_user_agent):
 
 
 # Eliminar usuario con token caducado
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_DELU005_delete_friend_with_expired_token(get_user_agent):
     """DELU005 - No debe permitir eliminar un amigo con token inválido (esperado: 401 o 403)"""
@@ -185,7 +186,7 @@ def test_DELU005_delete_friend_with_expired_token(get_user_agent):
 
 # DELU006 No debe permitir eliminar un amigo cuyo username contiene espacios
 @pytest.mark.functional
-@pytest.mark.negative
+@pytest.mark.regression
 def test_DELU006_delete_friend_with_spaces_in_username(
     get_token_fixture, get_user_agent
 ):
@@ -219,7 +220,7 @@ def test_DELU006_delete_friend_with_spaces_in_username(
 
 # DELU007 - No debe permitir eliminar un amigo cuyo username contiene solo números
 @pytest.mark.functional
-@pytest.mark.negative
+@pytest.mark.regression
 def test_DELU007_delete_friend_with_numeric_username(get_token_fixture, get_user_agent):
     """
     DELU007 - No debe permitir eliminar un amigo cuyo username contiene solo números.
@@ -250,7 +251,7 @@ def test_DELU007_delete_friend_with_numeric_username(get_token_fixture, get_user
 
 
 # Eliminar usuario sin Content-Type
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_DELU008_delete_friend_without_content_type(get_token_fixture, get_user_agent):
     """DELU006 - No debe permitir eliminar un amigo sin header Content-Type (esperado: 400, 415, 403, etc.)"""

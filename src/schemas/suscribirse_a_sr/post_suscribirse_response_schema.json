@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Empty Object Schema",
+  "description": "Valida que la respuesta sea un objeto vacío",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
