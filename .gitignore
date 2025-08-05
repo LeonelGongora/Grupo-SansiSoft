@@ -6,8 +6,6 @@ style.css
 .python-version
 *.py[cod]
 test_log.log
-*.json
-test_logs.log
 .venv
 *.md
 README.md
