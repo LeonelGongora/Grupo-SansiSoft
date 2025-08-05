@@ -10,9 +10,5 @@ test_log.log
 *.md
 README.md
 test_logs.log
-<<<<<<< HEAD
 # Ignorar archivos compilados de Python
 __pycache__/
-*.py[cod]
-=======
->>>>>>> 29ea43248b4e953e825460947c520cc1cb53ec00

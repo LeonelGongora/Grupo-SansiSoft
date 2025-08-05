@@ -1,6 +1,7 @@
 import pytest
 import logging
 import jsonschema
+from src.logs.logger import logger 
 from src.redditApi.reddit_api import obtener_comentarios,obtener_comentario_token_sin_token
 from src.assertions.comment_assertions import assert_obtener_comentario, assert_existe_body, assert_comentario_id_invalido,assert_comentario_sin_token
 from src.schemas.obtener_comentario.obtener_comentario_schema import obtener_comentario_schema
@@ -14,6 +15,8 @@ def test_RC001_obtener_comentario_200():
     response = obtener_comentarios(thing_id)
     logging.info("Validando que se haya obtenido el comentario exitosamente")
     assert_obtener_comentario(response)
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Response JSON: {response.json}")
     jsonschema.validate(instance=response.json(),schema=obtener_comentario_schema)
     logging.info("El esquema de la respuesta es valido")
 
