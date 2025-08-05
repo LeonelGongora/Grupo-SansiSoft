@@ -36,7 +36,6 @@ def test_SRC001_Suscribirse_a_un_subreddit_existente(get_token_fixture,get_user_
     assert_subscribe_success_empty_response(response)
 
 @pytest.mark.functional
-@pytest.mark.regression
 def test_SRC002_suscribirse_subreddit_inexistente(get_token_fixture,get_user_agent):
     """Verifica que no se pueda suscribir a un subreddit inexistente con un token válido."""""
     headers = {
@@ -62,7 +61,7 @@ def test_SRC002_suscribirse_subreddit_inexistente(get_token_fixture,get_user_age
 
 
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.regression 
 @pytest.mark.xfail(reason="BUG-001-SR003:Se obtiene un status code de 200 al suscribirse sin tokken ")
 def test_SRC003_suscribirse_sin_token(get_user_agent):
         """Verifica que no se pueda suscribir sin un token de autenticación."""""
@@ -146,7 +145,7 @@ def test_SRC005_suscribirse_token_invalido(get_user_agent):
 
 
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.regression 
 @pytest.mark.xfail(reason="BUG-002-SR003:Se obtiene un status code de 200 al suscribirse con action vacio")
 def test_SRC006_Suscribirse_omitiendo_parámetro_obligatorio_action_con_valor_vacio(get_token_fixture,get_user_agent):
     """Verificar que la solicitud falla si el campo action es enviado con valor vacio en el payload. """""
@@ -175,7 +174,7 @@ def test_SRC006_Suscribirse_omitiendo_parámetro_obligatorio_action_con_valor_va
 
 
 @pytest.mark.functional
-@pytest.mark.regression
+@pytest.mark.regression 
 @pytest.mark.xfail(reason="BUG-003-SR003:Se obtiene un status code de 200 al suscribirse sin parametro action ")
 def test_SRC0015_Suscribirse_sin_parámetro_obligatorio_action(get_token_fixture,get_user_agent):
     """Verificar que la solicitud falla si el campo action es deshabilitado o no existe en el payload. """""
@@ -200,7 +199,6 @@ def test_SRC0015_Suscribirse_sin_parámetro_obligatorio_action(get_token_fixture
     logger.debug(f"Response body:\n{response.text}")
     assert_subscribe_success_empty_response(response)
 
-@pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.xfail(reason="BUG-004-SR003:Se obtiene un status code de 200 al suscribirse con parametro invalido action ")
 def test_SRC007_Suscribirse_usando_un_valor_inválido_en_el_parámetro_action(get_token_fixture,get_user_agent):
@@ -306,7 +304,6 @@ def test_SRC010_Suscribirse_con_un_método_HTTP_no_permitido_PUT(get_token_fixtu
     assert_response_not_found(response)
 
 @pytest.mark.functional
-@pytest.mark.regression
 def test_SRC011_Suscribirse_con_un_método_HTTP_no_permitido_DELETE(get_token_fixture,get_user_agent):
     """Verificar que una solicitud usando DELETE no permita realizar la suscripción. """""
 

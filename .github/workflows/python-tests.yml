@@ -42,7 +42,7 @@ jobs:
 
       - name: Run tests
         run: |
-            MARK="${{ github.event.inputs.test_mark || 'smoke' }}"
+            MARK="${{ github.event.inputs.test_mark || 'regression' }}"
             if [ "$MARK" = "all" ]; then
             pytest -v --maxfail=2 --disable-warnings
             else
