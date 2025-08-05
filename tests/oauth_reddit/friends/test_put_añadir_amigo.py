@@ -17,6 +17,7 @@ def getSubmitUrl(username):
 #Agregar amigo con nombre de usuario valido
 @pytest.mark.smoke
 @pytest.mark.functional
+@pytest.mark.regression
 def test_AA001_add_friend_with_username_valid(get_token_fixture,get_user_agent):
     """AA001 - Add a friend successfully"""
     headers = build_headers(token=get_token_fixture, user_agent=get_user_agent)
@@ -33,7 +34,7 @@ def test_AA001_add_friend_with_username_valid(get_token_fixture,get_user_agent):
     assert_add_friend_successfully(response)
     assert_add_friend_success_response_schema(response.json())
 # Agregar amigo con nombre que ya es nuestro amigo
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 @pytest.mark.xfail(reason="El API permite agregar al mismo amigo dos veces, debería fallar")
 def test_AA002_add_friend_existing(get_token_fixture,get_user_agent):
@@ -50,7 +51,7 @@ def test_AA002_add_friend_existing(get_token_fixture,get_user_agent):
     assert response.status_code != 200, f"Expected failure, but got 200: {response.json()}"
 
 # Agregar amigo con nombre que NO existe
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_AA003_add_friend_nonexistent_user(get_token_fixture,get_user_agent):
     """AA002 - Debe fallar al agregar un usuario de Reddit no existente"""
@@ -69,7 +70,7 @@ def test_AA003_add_friend_nonexistent_user(get_token_fixture,get_user_agent):
     
     assert response.status_code == 404
 # Agregar amigo sin token → debe retornar 403
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_AA004_add_friend_without_token(get_user_agent):
     """AA007 - Debe retornar 403 cuando no se envía access token"""
@@ -91,7 +92,7 @@ def test_AA004_add_friend_without_token(get_user_agent):
     assert response.status_code == 403
 
 # Agregar amigo con token caducado → debe retornar 401
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_AA005_add_friend_with_expired_token(get_user_agent):
     """AA005 - Debe retornar 401 cuando se usa un access token caducado"""
@@ -113,7 +114,7 @@ def test_AA005_add_friend_with_expired_token(get_user_agent):
     assert response.status_code == 401
 
 # Agregar amigo con token inválido → debe retornar 403
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_AA006_add_friend_with_invalid_token(get_user_agent):
     """AA003 - Debe retornar 403 cuando se utiliza un token de acceso inválido"""
@@ -133,7 +134,7 @@ def test_AA006_add_friend_with_invalid_token(get_user_agent):
         assert response.status_code == 403
 
 # Agregar amigo con parámetros de consulta inválidos → no debe retornar 200
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_AA008_add_friend_with_invalid_query_params(get_token_fixture,get_user_agent):
     """AA007 - No debe retornar 200 cuando se envían parámetros de consulta inválidos"""
@@ -159,7 +160,7 @@ def test_AA008_add_friend_with_invalid_query_params(get_token_fixture,get_user_a
     assert response.status_code != 200
         
 # Agregar amigo con payload vacio       
-@pytest.mark.smoke
+@pytest.mark.regression
 @pytest.mark.functional
 def test_AA009_add_friend_with_empty_payload(get_token_fixture,get_user_agent):
     """AA009 - No debe retornar 200 cuando se envía un payload vacío"""
@@ -183,7 +184,6 @@ def test_AA009_add_friend_with_empty_payload(get_token_fixture,get_user_agent):
     assert response.status_code != 200
 
 # Agregar amigo con username con caracteres especiales
-@pytest.mark.smoke
 @pytest.mark.functional
 def test_AA010_add_friend_with_special_chars(get_token_fixture,get_user_agent):
     """AA009 - No debe retornar 200 cuando se envía un username con caracteres especiales"""
@@ -207,7 +207,6 @@ def test_AA010_add_friend_with_special_chars(get_token_fixture,get_user_agent):
     # Aceptable: cualquier otro status (400, 422, etc.)
     assert response.status_code != 200
 # Agregarse de maigo asi mismo
-@pytest.mark.smoke
 @pytest.mark.functional
 def test_AA011_add_self_as_friend(get_token_fixture,get_user_agent):
     """AA011 - No debe ser posible agregarse a sí mismo como amigo"""
@@ -232,7 +231,6 @@ def test_AA011_add_self_as_friend(get_token_fixture,get_user_agent):
     assert response.status_code != 200
 
 # Agregar amigo con nombre vacío → debe fallar (no debe retornar 200)
-@pytest.mark.smoke
 @pytest.mark.functional
 def test_AA015_add_friend_with_empty_name(get_token_fixture,get_user_agent):
     """AA012 - No debe ser posible agregar un amigo con nombre vacío"""

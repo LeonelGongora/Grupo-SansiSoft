@@ -13,7 +13,6 @@ from src.schemas.obtener_comentario.obtener_comentario_schema import obtener_com
 
 @pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.ejecutar
 def test_RC001_obtener_comentario_200():
     """Test para obtener un comentario exitosamente."""
     thing_id = "n6n6i95"  # Reemplaza con un ID de comentario válido
