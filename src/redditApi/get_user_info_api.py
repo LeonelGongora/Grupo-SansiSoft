@@ -22,7 +22,7 @@ def obtener_informacion_con_token_caducado(username_objetivo):
 
 def obtener_informacion_con_token_invalido(username_objetivo):
     payload = {}
-    headers = build_headers(token=os.getenv("REDDIT_TOKEN_INVALIDO"))
+    headers = build_headers(token="452fds45")
     url = f"{os.getenv('BASE_URL')}user/{username_objetivo}/about"
     response = requests.get(url, headers=headers, data=payload)
     return response

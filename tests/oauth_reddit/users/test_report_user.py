@@ -23,7 +23,7 @@ load_dotenv()
 def test_OI_001_reportar_usuario_exitosamentea():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+        "user": "Ok-Low-2580",
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -42,10 +42,11 @@ def test_OI_001_reportar_usuario_exitosamentea():
 
 @pytest.mark.functional
 @pytest.mark.regression 
+@pytest.mark.xfail(reason="BUG-001-USER003: Se obtiene un codigo 200 cuando se envia un usuario inexistente en el payload")
 def test_REPU_002_reportar_usuario_inexistente():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_INEXISTENTE'),
+        "user": "Ok-Low-25",
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -67,7 +68,7 @@ def test_REPU_002_reportar_usuario_inexistente():
 def test_REPU_003_reportar_usuario_con_token_invalido():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+        "user": "Ok-Low-2580",
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -84,7 +85,7 @@ def test_REPU_003_reportar_usuario_con_token_invalido():
 def test_REPU_004_reportar_usuario_sin_token():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+        "user": "Ok-Low-2580",
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -103,10 +104,10 @@ def test_REPU_004_reportar_usuario_sin_token():
 
 @pytest.mark.functional
 @pytest.mark.regression 
-def test_OI_005_reportar_usuario_token_vencido():
+def test_REPU_005_reportar_usuario_token_vencido():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+        "user": "Ok-Low-2580",
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -120,11 +121,12 @@ def test_OI_005_reportar_usuario_token_vencido():
 
 @pytest.mark.functional
 @pytest.mark.regression 
-def test_OI_006_reportar_usuario_con_reason_superando_100_caracteres():
+@pytest.mark.xfail(reason="BUG-002-USER003: Se obtiene un codigo 200 cuando se envia un reason de mas de 100 caracteres en el payload")
+def test_REPU_006_reportar_usuario_con_reason_superando_100_caracteres():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
-        "reason": os.getenv('REDDIT_RAZON_MAS_100_CARACTERES')
+        "user": "Ok-Low-2580",
+        "reason": "Este es un motivo de reporte que excede el límite permitido de cien caracteres, y por tanto debería fallar."
     }
 
     try:
@@ -137,10 +139,11 @@ def test_OI_006_reportar_usuario_con_reason_superando_100_caracteres():
 
 @pytest.mark.functional
 @pytest.mark.regression 
-def test_OI_007_reportar_usuario_con_carateres_especiales():
+@pytest.mark.xfail(reason="BUG-003-USER003: Se obtiene un código 200 cuando se reporta a un nombre de usuario con caracteres especiales.")
+def test_REPU_007_reportar_usuario_con_carateres_especiales():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_CARACTERES_ESPECIALES'),
+        "user": "Ok***/*/*",
         "reason": "Este es un motivo para reportar a un usuario"
     }
 
@@ -154,7 +157,8 @@ def test_OI_007_reportar_usuario_con_carateres_especiales():
     
 @pytest.mark.functional
 @pytest.mark.regression 
-def test_OI_008_reportar_usuario_con_nombre_usuario_vacio():
+@pytest.mark.xfail(reason="BUG-004-USER003: Se obtiene un codigo 200 cuando se envia una solicitud con usuario vacio")
+def test_REPU_008_reportar_usuario_con_nombre_usuario_vacio():
 
     datos_entrada = {
         "user": "",
@@ -171,7 +175,8 @@ def test_OI_008_reportar_usuario_con_nombre_usuario_vacio():
     
 @pytest.mark.functional
 @pytest.mark.regression 
-def test_OI_009_reportar_nombre_usuario_propio():
+@pytest.mark.xfail(reason="BUG-005-USER003: Se obtiene un código 200 cuando se reporta al nombre de usuario propio")
+def test_REPU_009_reportar_nombre_usuario_propio():
 
     datos_entrada = {
         "user": os.getenv('REDDIT_USERNAME'),
@@ -188,10 +193,11 @@ def test_OI_009_reportar_nombre_usuario_propio():
 
 @pytest.mark.functional
 @pytest.mark.regression 
-def test_OI_010_reportar_usuario_sin_reason():
+@pytest.mark.xfail(reason="BUG-006-USER003: Se obtiene un codigo 200 cuando se reporta a un usuario sin el campo reason en el body")
+def test_REPU_010_reportar_usuario_sin_reason():
 
     datos_entrada = {
-        "user": os.getenv('REDDIT_USERNAME_VALIDO'),
+        "user": "Ok-Low-2580",
     }
 
     try:

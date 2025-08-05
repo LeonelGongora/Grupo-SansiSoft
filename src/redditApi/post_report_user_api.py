@@ -17,7 +17,7 @@ def reportar_usuario_exitosamente(usuario, razon):
 
 def reportar_usuario_con_token_invalido(usuario, razon):
     payload = crear_payload_report_user(usuario, razon)
-    headers = build_headers(token=os.getenv("REDDIT_TOKEN_INVALIDO"))
+    headers = build_headers(token="452fds45")
     url = f"{os.getenv('BASE_URL')}api/report_user"
     response = requests.post(url, headers=headers, data=payload)
     return response
