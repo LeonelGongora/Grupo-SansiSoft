@@ -23,8 +23,8 @@ def test_CP001_create_post_exitoso(get_token_fixture, get_user_agent):
 
     payload = get_create_post_payload(
         subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
-        title='Hola buenas tardes',
-        text='Saben cuanto pesa un camello?',
+        title='Quien sabe si el cielo es azul?',
+        text='O es que es un mito?',
     )
     headers = get_create_post_headers(
         token=get_token_fixture,
@@ -222,7 +222,7 @@ def test_CP002_create_post_tipo_link_solo_titulo(get_token_fixture, get_user_age
     )
     payload = get_create_post_payload(
         subreddit=f"u_{os.getenv('REDDIT_USERNAME')}",
-        title='En esta ocasión solo el título',
+        title='Alguien tiene un link interesante?',
     )
     logger.info(f"domain: {url}/api/submit")
     logger.debug(f"Request headers: {headers}")
@@ -238,7 +238,6 @@ def test_CP002_create_post_tipo_link_solo_titulo(get_token_fixture, get_user_age
     assert_post_response_schema(response_json)
 
 @pytest.mark.functional
-@pytest.mark.regression
 def test_CP011_schema_payload_sin_campos_requeridos(get_token_fixture, get_user_agent):
     """
     CP-011: Verificar el schema del payload al crear post sin campos requeridos (title, kind, sr).
