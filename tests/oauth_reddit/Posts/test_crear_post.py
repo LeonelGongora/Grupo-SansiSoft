@@ -146,7 +146,6 @@ def test_CP008_create_post_sin_api_type(get_token_fixture, get_user_agent):
 
 @pytest.mark.functional
 @pytest.mark.regression
-@pytest.mark.ejecutar
 @pytest.mark.xfail(reason="BUG-CP009: El servidor deberia aceptar un payload sin 'kind' reportando el error, pero da error 500 internal server error")
 def test_CP009_create_post_sin_kind(get_token_fixture, get_user_agent):
     """
