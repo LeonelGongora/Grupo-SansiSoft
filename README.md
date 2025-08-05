@@ -4,7 +4,7 @@
 
 La plataforma **Reddit** es una red social en la que los usuarios pueden crear publicaciones, votar, comentar y participar en comunidades (subreddits) sobre una amplia variedad de temas.
 
-Este repositorio contiene un conjunto de **pruebas automatizadas** para validar el comportamiento de la API de Reddit utilizando Postman y Pytest.
+Este repositorio contiene un conjunto de **pruebas automatizadas** para validar el comportamiento de la API de Reddit utilizando Pytest.
 
 ---
 
@@ -13,11 +13,11 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
 - **Exploratorias**:
   - Colecciones de pruebas disponibles en el archivo `colecciones_postman.json`.
 - **Smoke Tests**:
-- Validan que los endpoints más importantes estén funcionando correctamente.
+- Comprenden los test cases que prueban el happy path.
 - **Pruebas Funcionales**:
-  - Verifican que cada funcionalidad de la API cumpla con los requerimientos esperados.
+  - Verifican que cada funcionalidad de la API cumpla con los requerimientos esperados, basandose en la documentacion.
 - **Pruebas de Regresión**:
-  - Aseguran que nuevas modificaciones no afecten funcionalidades ya implementadas.
+  - Comprende todas las pruebas realizadas.
 
 ---
 
