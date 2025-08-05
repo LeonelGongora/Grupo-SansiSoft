@@ -75,3 +75,9 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
    ```bash
    pytest
     ```
+6. Para generar el reporte de pytest:
+   ```bash
+   pytest --html=pytest.html
+    ```
+
+
