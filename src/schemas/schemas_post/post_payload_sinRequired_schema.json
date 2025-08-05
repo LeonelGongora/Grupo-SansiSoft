@@ -30,9 +30,6 @@
     }
   },
   "required": [
-    "api_type",
-    "sr",
-    "title",
-    "kind"
+    "api_type"
   ]
 }
