@@ -53,5 +53,10 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone --branch development https://github.com/LeonelGongora/Grupo-SansiSoft.git
+   
+2. Ejecuta las pruebas de Pytest:
+   ```bash
+   pytest
+    
+    
