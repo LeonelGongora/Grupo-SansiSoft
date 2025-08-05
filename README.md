@@ -56,7 +56,7 @@ Este repositorio contiene un conjunto de **pruebas automatizadas** para validar 
    git clone --branch development https://github.com/LeonelGongora/Grupo-SansiSoft.git
    ```
    
-2.Crear entorno virtual
+2. Crear entorno virtual
    ```bash
    python -m venv .venv
    ```
