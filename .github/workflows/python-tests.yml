@@ -34,8 +34,9 @@ jobs:
 
     - name: Run tests
       run: |
-        if [ "${{ github.event.inputs.test_mark }}" = "all" ]; then
+        MARK="${{ github.event.inputs.test_mark || 'all' }}"
+        if [ "$MARK" = "all" ]; then
           pytest -v --maxfail=2 --disable-warnings
         else
-          pytest -v -m ${{ github.event.inputs.test_mark }} --maxfail=2 --disable-warnings
+          pytest -v -m "$MARK" --maxfail=2 --disable-warnings
         fi
