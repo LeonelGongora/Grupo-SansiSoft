@@ -146,18 +146,17 @@ def test_DELU005_delete_friend_with_invalid_token(get_user_agent):
     logger.info("Status Code (token inválido): " + str(response.status_code))
     logger.debug("Response (token inválido): " + str(response.text))
 
-    if response.status_code not in [401, 403]:
+    if response.status_code not in [403]:
         pytest.xfail(
-            "La API debería rechazar la solicitud con token inválido, pero no lo hizo correctamente"
+            f"Se esperaba 403 al eliminar con token inválido, pero se recibió {response.status_code}"
         )
 
     assert response.status_code in [
-        401,
         403,
-    ], f"Se esperaba 401/403 al eliminar con token inválido, pero se recibió {response.status_code}"
+    ], f"Se esperaba 403 al eliminar con token inválido, pero se recibió {response.status_code}"
 
 
-# Eliminar usuario con token cadicado
+# Eliminar usuario con token caducado
 @pytest.mark.smoke
 @pytest.mark.functional
 def test_DELU005_delete_friend_with_expired_token(get_user_agent):
@@ -176,14 +175,12 @@ def test_DELU005_delete_friend_with_expired_token(get_user_agent):
     logger.info("Status Code (token inválido): " + str(response.status_code))
     logger.debug("Response (token inválido): " + str(response.text))
 
-    if response.status_code == 200:
-        pytest.xfail(
-            "La API debería rechazar la solicitud con token inválido, pero no lo hizo correctamente"
-        )
+    if response.status_code == 401:
+        assert True  # Comportamiento esperado
+    elif response.status_code == 200:
+        pytest.xfail("La API permitió eliminar con un token caducado (devolvió 200). Debería devolver 401.")
     else:
-        assert (
-            True
-        ), f"Se esperaba 401/403 al eliminar con token inválido, pero se recibió {response.status_code}"
+        pytest.fail(f"Se esperaba 401 al usar token caducado, pero se recibió {response.status_code}")
 
 
 # DELU006 No debe permitir eliminar un amigo cuyo username contiene espacios
