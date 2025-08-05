@@ -1,5 +1,6 @@
 import requests
 import pytest
+import os
 from src.logs.logger import logger  
 from src.assertions.get_post_assertions import (
     assert_get_post_response_schema,
@@ -19,11 +20,13 @@ def test_OI001_get_post_by_id(get_token_fixture, created_post_id, get_user_agent
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
-    logger.debug(f"Respuesta JSON exitoso: {response_json}")
     # Validaciones
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Respuesta JSON exitoso: {response_json}")
     assert_status_code(response, expected_status=200)
     assert_get_post_response_schema(response_json)
 
@@ -41,12 +44,15 @@ def test_OI002_get_post_id_nonexistent(get_token_fixture, get_user_agent):
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON para ID inexistente: {response_json}")
     # 404 Not Found: El formato del ID es válido (t3_ incluido), pero no existe.
     assert_status_code(response, expected_status=404)
+    
 
 @pytest.mark.functional
 @pytest.mark.regression
@@ -62,13 +68,15 @@ def test_OI003_get_post_id_without_prefix(get_token_fixture, get_user_agent):
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
-    
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON para ID sin prefijo: {response_json}")
     # 400 Bad Request: No cumple el formato requerido por la API, es un error de solicitud.
     assert_status_code(response, expected_status=400)
+
 
 @pytest.mark.functional
 @pytest.mark.regression
@@ -84,9 +92,11 @@ def test_OI004_get_post_id_invalid_format(get_token_fixture, get_user_agent):
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON para ID con formato inválido: {response_json}")
     # 400 Bad Request: El formato no es válido, se espera un ID alfanumérico bien formado.
     assert_status_code(response, expected_status=400)
@@ -105,9 +115,11 @@ def test_OI005_get_post_id_empty(get_token_fixture, get_user_agent):
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON para ID vacío: {response_json}")
     # 400 Bad Request: Falta parámetro obligatorio o está vacío.
     assert_status_code(response, expected_status=400)
@@ -125,9 +137,11 @@ def test_OI006_get_post_without_query_params(get_token_fixture, get_user_agent):
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON sin query params: {response_json}")
     # 400 Bad Request: Falta parámetro obligatorio id.
     assert_status_code(response, expected_status=400)
@@ -147,15 +161,18 @@ def test_OI008_get_post_id_uppercase(get_token_fixture, created_post_id, get_use
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON para ID en mayúsculas: {response_json}")
     # 404 Not Found: La API es case-sensitive y no encuentra el recurso.
     assert_status_code(response, expected_status=404)
 
 @pytest.mark.functional
 @pytest.mark.regression
+@pytest.mark.ejecutar
 def test_OI007_get_post_with_duplicate_query_params(get_token_fixture, created_post_id, get_user_agent):
     """
     OI-007: Obtener información de un post enviando dos veces el mismo query param.
@@ -168,16 +185,15 @@ def test_OI007_get_post_with_duplicate_query_params(get_token_fixture, created_p
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
-
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Respuesta JSON para ID en mayúsculas: {response_json}")
     # Validar que retorna 200
     assert_status_code(response, expected_status=200)
     assert_get_post_response_schema(response_json)
-
-import pytest
-import requests
 
 @pytest.mark.functional
 @pytest.mark.regression
@@ -186,21 +202,19 @@ def test_OI010_get_post_with_expired_token(get_user_agent, created_post_id):
     OI-010: Intentar obtener un post con token expirado.
     Debería devolver 403 Unauthorized.
     """
-    expired_token = "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0"  # Token expirado guardado hace 2 días
+    expired_token = os.getenv("REDDIT_ACCESS_TOKEN_CADUCADO")  # Token expirado guardado hace 2 días
     post_id = created_post_id
     url = f"https://oauth.reddit.com/api/info?id={post_id}"
     headers = {
         'Authorization': f'bearer {expired_token}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
-    logger.debug(f"Respuesta con token expirado: {response.status_code} - {response.text}")
-
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Respuesta con token expirado: {response.text}")
     assert_status_code(response, expected_status=403)
-
-import pytest
-import requests
 
 @pytest.mark.functional
 @pytest.mark.regression
@@ -217,10 +231,11 @@ def test_OI009_get_post_with_empty_token(get_user_agent):
         'Authorization': f'bearer {empty_token}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
-    logger.debug(f"Respuesta con token vacío: {response.status_code} - {response.text}")
-
+    logger.info(f"Status code: {response.status_code}")
+    logger.debug(f"Respuesta con token vacío: {response.text}")
     assert_status_code(response, expected_status=401)
 
 @pytest.mark.functional
@@ -236,9 +251,11 @@ def test_OI011_validate_required_fields_in_post_schema(get_token_fixture, create
         'Authorization': f'bearer {get_token_fixture}',
         'User-Agent': get_user_agent
     }
-
+    logger.info(f"domain: {url}")
+    logger.debug(f"Request headers: {headers}")
     response = requests.get(url, headers=headers)
     response_json = response.json()
+    logger.info(f"Status code: {response.status_code}")
     logger.debug(f"Respuesta JSON para validación de campos requeridos: {response_json}")
     # Validaciones
     assert_status_code(response, expected_status=200)
