@@ -2,12 +2,13 @@ config.py
 .env
 report.html
 style.css
-test_log.log
-README.md
-test_logs.loggit add.
-
 __pycache__/
 *.py[cod]
-
-.cache/
-pytest_cache/
+test_log.log
+*.json
+.venv
+*.md
+README.md
+test_logs.log
+# Ignorar archivos compilados de Python
+__pycache__/
