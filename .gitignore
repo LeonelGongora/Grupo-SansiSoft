@@ -2,8 +2,14 @@ config.py
 .env
 report.html
 style.css
+
+.pytest_cache/
+__pycache__/
+.python-version
+=======
 __pycache__/
 *.py[cod]
+
 test_log.log
 *.json
 .venv
