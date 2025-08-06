@@ -1,0 +1,30 @@
+ID del Test: SCRUM_T41
+Título: Crear un subreddit con nombre válido
+
+Descripción: 
+Verificar que un usuario autenticado puede crear un subreddit con un nombre válido, y que la respuesta contiene los datos correctos según el esquema esperado.
+
+Precondiciones
+- Usuario autenticado con token válido.
+- Endpoint /api/site_admin activo.
+- Payload válido con nombre único.
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Generar un nombre único para el subreddit.
+2. Enviar petición POST con payload y headers autorizados.
+3. Validar que la respuesta tenga código 200 o 201.
+4. Verificar que el contenido cumpla con el esquema esperado.
+
+Resultado esperado
+- Respuesta HTTP 200 o 201.
+- Respuesta JSON con datos del subreddit creado.
+- Validación exitosa contra esquema.
+
+Prioridad
+- Alta (1)
+
+Categoría
+- Funcional, Regresión

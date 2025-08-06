@@ -1,0 +1,28 @@
+ID del Test: SCRUM_T44
+Título: Crear subreddit sin token de autenticación (negativo)
+
+Descripción
+- Verificar que sin token de autenticación la API rechaza la creación con código 401.
+
+Precondiciones
+1. No enviar token en headers.
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST sin token.
+2. Verificar código 401 y mensaje de autorización requerida.
+
+Resultado esperado
+- Código HTTP 401 Unauthorized.
+- Mensaje de error indicando falta de token.
+
+Prioridad
+- Alta (1)
+
+Categoría
+- Funcional, Negativo

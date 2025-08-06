@@ -1,0 +1,27 @@
+ID del Test: SCRUM_T42
+Título: Crear un subreddit con nombre ya existente (negativo)
+
+Descripción
+- Verificar que al intentar crear un subreddit con un nombre que ya existe, la API responde con un error adecuado (400 o 409).
+
+Precondiciones
+- Usuario autenticado con token válido.
+- Subreddit con nombre ya existente.
+
+Ambiente
+URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar petición POST con nombre duplicado.
+2. Verificar código de error en la respuesta.
+3. Confirmar mensaje de error adecuado en la respuesta.
+
+Resultado esperado
+- Código HTTP 400 o 409.
+- Mensaje indicando nombre duplicado o subreddit ya existente.
+
+Prioridad
+- Media (2)
+
+Categoría
+- Funcional, Negativo
