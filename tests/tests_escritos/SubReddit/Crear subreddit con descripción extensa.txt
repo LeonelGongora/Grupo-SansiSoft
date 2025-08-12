@@ -1,0 +1,27 @@
+ID del Test: SCRUM_T54
+Título: Crear subreddit con descripción extensa
+
+Descripción
+- Verificar que se puede crear un subreddit con una descripción larga sin problemas.
+
+Precondiciones
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST con descripción larga.
+2. Verificar creación exitosa.
+
+Resultado esperado
+- Código HTTP 200 o 201.
+- Respuesta válida con descripción almacenada.
+
+Prioridad
+- Media (2)
+
+Categoría
+- Funcional

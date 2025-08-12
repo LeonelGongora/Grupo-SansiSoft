@@ -1,0 +1,26 @@
+ID del Test: SCRUM_T47
+Título: Crear subreddit con caracteres especiales en el nombre (negativo)
+
+Descripción
+- Verificar que la API rechaza nombres que contengan caracteres especiales inválidos.
+
+Precondiciones
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST con nombre que contiene caracteres especiales.
+2. Verificar código 400 y mensaje de error.
+
+Resultado esperado
+- Código HTTP 400 Bad Request.
+- Mensaje de error indicando nombre inválido.
+
+Prioridad
+- Media (2)
+
+Categoría
+- Funcional, Negativo

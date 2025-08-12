@@ -1,0 +1,27 @@
+ID del Test: SCRUM_T56
+Título: Crear subreddit con nombre vacío o solo espacios (negativo)
+
+Descripción
+- Verificar que la API rechaza la creación si el nombre está vacío o contiene solo espacios.
+
+Precondiciones
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST con nombre solo espacios.
+2. Verificar código de error (400 o 422) y mensaje.
+
+Resultado esperado
+- Código HTTP 400 o 422.
+- Mensaje de error indicando nombre inválido.
+
+Prioridad
+- Media (2)
+
+Categoría
+- Funcional, Negativo

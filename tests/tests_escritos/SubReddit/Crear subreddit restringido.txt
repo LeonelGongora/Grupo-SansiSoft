@@ -1,0 +1,27 @@
+ID del Test: SCRUM_T51
+Título: Crear subreddit restringido
+
+Descripción
+- Verificar que se puede crear un subreddit con tipo restricted.
+
+Precondiciones
+- Usuario autenticado.
+- Tener acceso a la URL pública de la API para realizar pruebas.  
+- El endpoint debe estar activo y funcionando correctamente. 
+
+Ambiente
+- URL: https://oauth.reddit.com/api/site_admin
+
+Pasos
+1. Enviar POST con campo subreddit_type igual a restricted.
+2. Verificar creación exitosa.
+
+Resultado esperado
+- Código HTTP 200 o 201.
+- Subreddit restringido creado correctamente.
+
+Prioridad
+- Alta (1)
+
+Categoría
+- Funcional
